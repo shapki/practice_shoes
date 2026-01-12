@@ -1,17 +1,25 @@
-﻿using shoes_var1.AppForms;
+﻿using shoes.AppForms;
+using shoes.AppModels;
 using System;
 using System.Windows.Forms;
 
-namespace shoes_var1
+namespace shoes
 {
     internal static class Program
     {
+        public static ContextDB context = new ContextDB();
+
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
         [STAThread]
         static void Main()
         {
+            if (!context.Database.Exists())
+            {
+                MessageBox.Show("Ошибка соединения с базой данных", "Ошибка соединения с базой данных", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginForm());

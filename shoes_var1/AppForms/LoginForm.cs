@@ -1,20 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using shoes.AppExceptions;
 using System.Windows.Forms;
+using System;
 
-namespace shoes_var1.AppForms
+namespace shoes.AppForms
 {
-    public partial class LoginForm : Form
+    public partial class LoginForm : ParentForm
     {
         public LoginForm()
         {
             InitializeComponent();
+            ContextManager.parentForm = this;
+        }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AuthManager.Login(loginTextBox.Text, passwordTextBox.Text);
+            }
+            catch (UnauthorizedException ex)
+            {
+                MessageBox.Show(ex.Message, ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void guestButton_Click(object sender, EventArgs e)
+        {
+            AuthManager.Login("g", "g");
         }
     }
 }
