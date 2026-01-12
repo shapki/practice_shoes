@@ -107,6 +107,9 @@
     <Folder Include="AppModels\" />
     <Folder Include="AppServices\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Docs\script.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MSTest.TestFramework.4.0.1\build\net462\MSTest.TestFramework.targets" Condition="Exists('..\packages\MSTest.TestFramework.4.0.1\build\net462\MSTest.TestFramework.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
