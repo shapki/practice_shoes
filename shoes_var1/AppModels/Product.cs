@@ -58,5 +58,12 @@ namespace shoes.AppModels
         public virtual ICollection<OrderProduct> OrderProduct { get; set; }
 
         public virtual Supplier Supplier { get; set; }
+
+        // PKGH {
+        public bool IsNew()
+        {
+            return (IdProduct == 0);
+        }
+        // } PKGH 
     }
 }
