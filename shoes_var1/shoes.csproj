@@ -72,6 +72,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppConstants\Color.cs" />
+    <Compile Include="AppConstants\FilePath.cs" />
+    <Compile Include="AppControls\FilePath.cs" />
     <Compile Include="AppControls\ProductUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -108,6 +111,7 @@
     <Compile Include="AppModels\Product.cs" />
     <Compile Include="AppModels\Supplier.cs" />
     <Compile Include="AppModels\User.cs" />
+    <Compile Include="AppServices\FileManager.cs" />
     <Compile Include="AppServices\FormManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -165,9 +169,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="AppConstants\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Docs\script.sql" />
     <Content Include="Icon_1.ico" />

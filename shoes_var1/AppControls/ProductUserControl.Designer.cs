@@ -34,15 +34,16 @@
             this.description = new System.Windows.Forms.Label();
             this.supplier = new System.Windows.Forms.Label();
             this.manufacturer = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.price = new System.Windows.Forms.Label();
+            this.unitOfMeasurement = new System.Windows.Forms.Label();
+            this.stock = new System.Windows.Forms.Label();
             this.deleteButton = new System.Windows.Forms.Button();
             this.photo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.discount = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.Label();
+            this.oldPrice = new System.Windows.Forms.Label();
             this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.photo)).BeginInit();
             this.panel1.SuspendLayout();
@@ -51,10 +52,11 @@
             // mainPanel
             // 
             this.mainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.mainPanel.Controls.Add(this.oldPrice);
             this.mainPanel.Controls.Add(this.deleteButton);
-            this.mainPanel.Controls.Add(this.label6);
-            this.mainPanel.Controls.Add(this.label5);
-            this.mainPanel.Controls.Add(this.label4);
+            this.mainPanel.Controls.Add(this.stock);
+            this.mainPanel.Controls.Add(this.unitOfMeasurement);
+            this.mainPanel.Controls.Add(this.price);
             this.mainPanel.Controls.Add(this.manufacturer);
             this.mainPanel.Controls.Add(this.supplier);
             this.mainPanel.Controls.Add(this.description);
@@ -115,35 +117,36 @@
             this.manufacturer.TabIndex = 4;
             this.manufacturer.Text = "Поставщик";
             // 
-            // label4
+            // price
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 8.25F);
-            this.label4.Location = new System.Drawing.Point(3, 55);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 14);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Цена";
+            this.price.AutoSize = true;
+            this.price.Font = new System.Drawing.Font("Times New Roman", 8.25F);
+            this.price.Location = new System.Drawing.Point(3, 55);
+            this.price.Name = "price";
+            this.price.Size = new System.Drawing.Size(31, 14);
+            this.price.TabIndex = 5;
+            this.price.Text = "Цена";
             // 
-            // label5
+            // unitOfMeasurement
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 8.25F);
-            this.label5.Location = new System.Drawing.Point(3, 69);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 14);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Единица измерения";
+            this.unitOfMeasurement.AccessibleName = "unitOfMeasurement";
+            this.unitOfMeasurement.AutoSize = true;
+            this.unitOfMeasurement.Font = new System.Drawing.Font("Times New Roman", 8.25F);
+            this.unitOfMeasurement.Location = new System.Drawing.Point(3, 69);
+            this.unitOfMeasurement.Name = "unitOfMeasurement";
+            this.unitOfMeasurement.Size = new System.Drawing.Size(101, 14);
+            this.unitOfMeasurement.TabIndex = 6;
+            this.unitOfMeasurement.Text = "Единица измерения";
             // 
-            // label6
+            // stock
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 8.25F);
-            this.label6.Location = new System.Drawing.Point(3, 83);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(109, 14);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Количество на складе";
+            this.stock.AutoSize = true;
+            this.stock.Font = new System.Drawing.Font("Times New Roman", 8.25F);
+            this.stock.Location = new System.Drawing.Point(3, 83);
+            this.stock.Name = "stock";
+            this.stock.Size = new System.Drawing.Size(109, 14);
+            this.stock.TabIndex = 7;
+            this.stock.Text = "Количество на складе";
             // 
             // deleteButton
             // 
@@ -168,7 +171,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.discount);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Location = new System.Drawing.Point(620, 20);
             this.panel1.Name = "panel1";
@@ -184,14 +187,14 @@
             this.label7.Text = "Действующая скидка";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label9
+            // discount
             // 
-            this.label9.Location = new System.Drawing.Point(-4, 55);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(100, 28);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Скидка";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.discount.Location = new System.Drawing.Point(-4, 55);
+            this.discount.Name = "discount";
+            this.discount.Size = new System.Drawing.Size(100, 28);
+            this.discount.TabIndex = 2;
+            this.discount.Text = "Скидка";
+            this.discount.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // id
             // 
@@ -201,6 +204,18 @@
             this.id.Size = new System.Drawing.Size(15, 14);
             this.id.TabIndex = 3;
             this.id.Text = "id";
+            // 
+            // oldPrice
+            // 
+            this.oldPrice.AutoSize = true;
+            this.oldPrice.BackColor = System.Drawing.Color.White;
+            this.oldPrice.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Strikeout, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.oldPrice.ForeColor = System.Drawing.Color.Red;
+            this.oldPrice.Location = new System.Drawing.Point(90, 55);
+            this.oldPrice.Name = "oldPrice";
+            this.oldPrice.Size = new System.Drawing.Size(65, 14);
+            this.oldPrice.TabIndex = 9;
+            this.oldPrice.Text = "Старая цена";
             // 
             // ProductUserControl
             // 
@@ -230,16 +245,17 @@
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Label categoryLaabel;
         private System.Windows.Forms.Label categoryProductName;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label stock;
+        private System.Windows.Forms.Label unitOfMeasurement;
+        private System.Windows.Forms.Label price;
         private System.Windows.Forms.Label manufacturer;
         private System.Windows.Forms.Label supplier;
         private System.Windows.Forms.Label description;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label discount;
         private System.Windows.Forms.Label id;
+        private System.Windows.Forms.Label oldPrice;
     }
 }

@@ -42,9 +42,9 @@
             this.moreFirst = new System.Windows.Forms.RadioButton();
             this.fewerFirst = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.productTableAdapter = new shoes.Shapkin_practice_shoesDataSetTableAdapters.ProductTableAdapter();
             this.tableAdapterManager = new shoes.Shapkin_practice_shoesDataSetTableAdapters.TableAdapterManager();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.supplierTableAdapter = new shoes.Shapkin_practice_shoesDataSetTableAdapters.SupplierTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -197,6 +197,15 @@
             this.button1.Text = "Заказы";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(800, 302);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
             // productTableAdapter
             // 
             this.productTableAdapter.ClearBeforeFill = true;
@@ -212,14 +221,6 @@
             this.tableAdapterManager.SupplierTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = shoes.Shapkin_practice_shoesDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UserTableAdapter = null;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(800, 302);
-            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // supplierBindingSource
             // 

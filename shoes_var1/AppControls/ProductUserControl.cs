@@ -1,5 +1,6 @@
 ﻿using shoes.AppExceptions;
 using shoes.AppModels;
+using shoes.AppServices;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,6 +8,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,26 +26,72 @@ namespace shoes.AppControls
             ShowDeleteButton();
             _product = product;
             ShowProductInfo();
+            HighlightGreatDiscount();
+        }
+
+        private void HighlightGreatDiscount()
+        {
+            if (_product.Discount > 15)
+            {
+                this.BackColor = ColorTranslator.FromHtml(AppConstants.Color.greatDiscount);
+            }
         }
 
         private void ShowDeleteButton()
         {
-            throw new NotImplementedException();
             deleteButton.Visible = ContextManager.user.IsAdmin();
         }
 
         private void ShowProductInfo()
         {
-            throw new NotImplementedException();
             categoryProductName.Text = $"{_product.Category} | {_product.ProductName}";
             description.Text = $"Описание товара: {_product.Description}";
             manufacturer.Text = $"Производитель: {_product.Manufacturer.ManufacturerName}";
             supplier.Text = $"Поставщик: {_product.Supplier.SupplierName}";
-            price.Text = $"Цена: {_product.Price} руб.";
+            oldPrice.Text = GetOldPrice();
+            price.Text = GetPrice(); _ = $"Цена: {_product.Price} руб.";
             unitOfMeasurement.Text = $"Единица измерения: {_product.UnitOfMeasurement}";
             stock.Text = $"Количество на складе: {_product.Stock}";
             id.Text = $"Id: {_product.IdProduct}";
+            photo.Image = GetImage();
+            discount.Text = String.Format("{0} %", _product.Discount);
+
         }
 
+        private Image GetImage()
+        {
+
+            Image img;
+            try
+            {
+                {
+                    img = Image.FromFile(FileManager.GetImgPath(_product.Photo));
+                }
+
+            }
+            catch (FileNotFoundException ex)
+            {
+                img = Image.FromFile(FileManager.GetImgPath(FilePath.defaultPicture));
+            }
+
+            return img;
+        }
+
+        private string GetOldPrice()
+        {
+            return _product.Discount > 0 ? $"{_product.Price} руб." : "";
+        }
+
+        private string GetPrice()
+        {
+            double tmpPrice = _product.Price;
+
+            if (_product.Discount > 0)
+            {
+                tmpPrice = _product.Price * ((100 - _product.Discount) / 100);
+            }
+
+            return String.Format("Цена: {0} руб.", tmpPrice.ToString("F2", CultureInfo.InvariantCulture));
+        }
     }
 }
