@@ -27,6 +27,7 @@ namespace shoes.AppControls
             _product = product;
             ShowProductInfo();
             HighlightGreatDiscount();
+            HighlightAbsent();
         }
 
         private void HighlightGreatDiscount()
@@ -34,6 +35,15 @@ namespace shoes.AppControls
             if (_product.Discount > 15)
             {
                 this.BackColor = ColorTranslator.FromHtml(AppConstants.Color.greatDiscount);
+            }
+        }
+
+        private void HighlightAbsent()
+        {
+            Debug.Assert(_product.Stock >= 0); // PKGH Отрицательным запас быть не может.
+            if (_product.Stock == 0)
+            {
+                this.BackColor = System.Drawing.Color.LightBlue;
             }
         }
 

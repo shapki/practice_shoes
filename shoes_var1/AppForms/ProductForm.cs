@@ -11,6 +11,7 @@ namespace shoes.AppForms
 {
     public partial class ProductForm : ParentForm
     {
+        private List<Product> _products;
         public ProductForm()
         {
             InitializeComponent();
@@ -36,6 +37,65 @@ namespace shoes.AppForms
             {
                 flowLayoutPanel1.Controls.Add(new ProductUserControl(product));
             }
+
+            FillSupplier();
+            SelectProducts();
+            ShowProducts();
+        }
+
+        public void Refresh()
+        {
+            ClearProducts();
+            SelectProducts();
+            ShowProducts();
+        }
+
+        private void FillSupplier()
+        {
+            List<Supplier> suppliers = Program.context.Supplier.OrderBy(s => s.SupplierName).ToList();
+            Supplier supplier = new Supplier();
+            supplier.SupplierName = "Все поставщики";
+            suppliers.Insert(0, supplier);
+
+            supplierBindingSource.DataSource = suppliers;
+        }
+
+        private void ClearProducts()
+        {
+            flowLayoutPanel1.Controls.Clear();
+        }
+
+        private void ShowProducts()
+        {
+            foreach (Product product in _products)
+            {
+                flowLayoutPanel1.Controls.Add(new ProductUserControl(product));
+            }
+        }
+
+        private void SelectProducts()
+        {
+            _products = Program.context.Product.ToList();
+        }
+
+        private void fewerFirst_CheckedChanged(object sender, EventArgs e)
+        {
+            Refresh();
+        }
+
+        private void moreFirst_CheckedChanged(object sender, EventArgs e)
+        {
+            Refresh();
+        }
+
+        private void supplierIdComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Refresh();
+        }
+
+        private void search_TextChanged(object sender, EventArgs e)
+        {
+            Refresh();
         }
     }
 }

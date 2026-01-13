@@ -137,6 +137,7 @@
             this.supplierIdComboBox.Name = "supplierIdComboBox";
             this.supplierIdComboBox.Size = new System.Drawing.Size(121, 22);
             this.supplierIdComboBox.TabIndex = 3;
+            this.supplierIdComboBox.SelectedIndexChanged += new System.EventHandler(this.supplierIdComboBox_SelectedIndexChanged);
             // 
             // productBindingSource
             // 
@@ -154,6 +155,7 @@
             this.search.Name = "search";
             this.search.Size = new System.Drawing.Size(100, 20);
             this.search.TabIndex = 1;
+            this.search.TextChanged += new System.EventHandler(this.search_TextChanged);
             // 
             // groupBox1
             // 
@@ -176,6 +178,7 @@
             this.moreFirst.TabStop = true;
             this.moreFirst.Text = "Больше";
             this.moreFirst.UseVisualStyleBackColor = true;
+            this.moreFirst.CheckedChanged += new System.EventHandler(this.moreFirst_CheckedChanged);
             // 
             // fewerFirst
             // 
@@ -187,6 +190,7 @@
             this.fewerFirst.TabStop = true;
             this.fewerFirst.Text = "Меньше";
             this.fewerFirst.UseVisualStyleBackColor = true;
+            this.fewerFirst.CheckedChanged += new System.EventHandler(this.fewerFirst_CheckedChanged);
             // 
             // button1
             // 
