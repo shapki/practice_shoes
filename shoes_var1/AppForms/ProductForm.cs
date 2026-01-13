@@ -180,5 +180,11 @@ namespace shoes.AppForms
         {
             Refresh();
         }
+
+        private void addProductButton_Click(object sender, EventArgs e)
+        {
+            CreateUpdateProductForm CreateUpdateProductForm = new CreateUpdateProductForm();
+            DialogResult saved = CreateUpdateProductForm.ShowDialog();
+        }
     }
 }

@@ -98,6 +98,7 @@
             this.addProductButton.TabIndex = 3;
             this.addProductButton.Text = "Добавить товар";
             this.addProductButton.UseVisualStyleBackColor = true;
+            this.addProductButton.Click += new System.EventHandler(this.addProductButton_Click);
             // 
             // advancedPanel
             // 

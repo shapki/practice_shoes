@@ -85,6 +85,12 @@
     <Compile Include="AppExceptions\Color.cs" />
     <Compile Include="AppExceptions\ContextManager.cs" />
     <Compile Include="AppExceptions\UnauthorizedException.cs" />
+    <Compile Include="AppForms\CreateUpdateProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\CreateUpdateProductForm.Designer.cs">
+      <DependentUpon>CreateUpdateProductForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppForms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </Compile>
     <EmbeddedResource Include="AppControls\ProductUserControl.resx">
       <DependentUpon>ProductUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\CreateUpdateProductForm.resx">
+      <DependentUpon>CreateUpdateProductForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppForms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

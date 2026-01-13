@@ -42,3 +42,4 @@ D:\shoes\shoes_var1\obj\Debug\shoes.pdb
 D:\shoes\shoes_var1\obj\Debug\shoes.AppControls.ProductUserControl.resources
 D:\shoes\shoes_var1\obj\Debug\shoes.AppForms.LoginForm.resources
 D:\shoes\shoes_var1\obj\Debug\shoes.AppForms.ProductForm.resources
+D:\shoes\shoes_var1\obj\Debug\shoes.AppForms.CreateUpdateProductForm.resources
