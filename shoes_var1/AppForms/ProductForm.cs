@@ -1,6 +1,10 @@
-﻿using shoes.AppExceptions;
+﻿using shoes.AppControls;
+using shoes.AppExceptions;
+using shoes.AppModels;
 using shoes.AppServices;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace shoes.AppForms
@@ -10,7 +14,6 @@ namespace shoes.AppForms
         public ProductForm()
         {
             InitializeComponent();
-            ContextManager.parentForm = this;
         }
 
         private void ProductForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -23,19 +26,16 @@ namespace shoes.AppForms
             FormManager.PrepareForm("Товары");
         }
 
-        private void productBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.productBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.shapkin_practice_shoesDataSet);
-
-        }
-
         private void ProductForm_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "shapkin_practice_shoesDataSet.Product". При необходимости она может быть перемещена или удалена.
-            this.productTableAdapter.Fill(this.shapkin_practice_shoesDataSet.Product);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "shapkin_practice_shoesDataSet.Supplier". При необходимости она может быть перемещена или удалена.
+            this.supplierTableAdapter.Fill(this.shapkin_practice_shoesDataSet.Supplier);
 
+            List<Product> products = Program.context.Product.ToList();
+            foreach (Product product in products)
+            {
+                flowLayoutPanel1.Controls.Add(new ProductUserControl(product));
+            }
         }
     }
 }

@@ -77,6 +77,7 @@
             // 
             // roleLabel
             // 
+            this.roleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.roleLabel.AutoSize = true;
             this.roleLabel.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold);
             this.roleLabel.Location = new System.Drawing.Point(401, 27);
@@ -85,9 +86,11 @@
             this.roleLabel.TabIndex = 3;
             this.roleLabel.Text = "                                                                                 " +
     "               ";
+            this.roleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // fullNameLabel
             // 
+            this.fullNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.fullNameLabel.AutoSize = true;
             this.fullNameLabel.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold);
             this.fullNameLabel.Location = new System.Drawing.Point(401, 10);
@@ -96,7 +99,7 @@
             this.fullNameLabel.TabIndex = 2;
             this.fullNameLabel.Text = "                                                                                 " +
     "               ";
-            this.fullNameLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.fullNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // titleLabel
             // 

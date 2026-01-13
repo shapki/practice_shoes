@@ -72,6 +72,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppControls\ProductUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppControls\ProductUserControl.Designer.cs">
+      <DependentUpon>ProductUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppExceptions\AuthManager.cs" />
     <Compile Include="AppExceptions\Color.cs" />
     <Compile Include="AppExceptions\ContextManager.cs" />
@@ -102,8 +108,17 @@
     <Compile Include="AppModels\Product.cs" />
     <Compile Include="AppModels\Supplier.cs" />
     <Compile Include="AppModels\User.cs" />
+    <Compile Include="AppServices\FormManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shapkin_practice_shoesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Shapkin_practice_shoesDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AppControls\ProductUserControl.resx">
+      <DependentUpon>ProductUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppForms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,14 +150,23 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Shapkin_practice_shoesDataSet.xsc">
+      <DependentUpon>Shapkin_practice_shoesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Shapkin_practice_shoesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Shapkin_practice_shoesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Shapkin_practice_shoesDataSet.xss">
+      <DependentUpon>Shapkin_practice_shoesDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AppConstants\" />
-    <Folder Include="AppControls\" />
-    <Folder Include="AppServices\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Docs\script.sql" />
