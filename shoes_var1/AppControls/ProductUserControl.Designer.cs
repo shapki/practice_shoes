@@ -64,7 +64,7 @@
             this.mainPanel.Controls.Add(this.categoryLaabel);
             this.mainPanel.Location = new System.Drawing.Point(140, 20);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(460, 100);
+            this.mainPanel.Size = new System.Drawing.Size(444, 100);
             this.mainPanel.TabIndex = 1;
             // 
             // categoryLaabel
@@ -151,7 +151,7 @@
             // deleteButton
             // 
             this.deleteButton.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this.deleteButton.Location = new System.Drawing.Point(380, 72);
+            this.deleteButton.Location = new System.Drawing.Point(364, 72);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(75, 23);
             this.deleteButton.TabIndex = 8;
@@ -173,7 +173,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.discount);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Location = new System.Drawing.Point(620, 20);
+            this.panel1.Location = new System.Drawing.Point(604, 20);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(100, 100);
             this.panel1.TabIndex = 2;
@@ -199,7 +199,7 @@
             // id
             // 
             this.id.AutoSize = true;
-            this.id.Location = new System.Drawing.Point(607, 124);
+            this.id.Location = new System.Drawing.Point(606, 124);
             this.id.Name = "id";
             this.id.Size = new System.Drawing.Size(15, 14);
             this.id.TabIndex = 3;
@@ -222,6 +222,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.id);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.mainPanel);
@@ -229,7 +230,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.Margin = new System.Windows.Forms.Padding(30, 0, 29, 31);
             this.Name = "ProductUserControl";
-            this.Size = new System.Drawing.Size(740, 140);
+            this.Size = new System.Drawing.Size(724, 138);
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.photo)).EndInit();

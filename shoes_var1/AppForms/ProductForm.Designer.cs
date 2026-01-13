@@ -34,7 +34,6 @@
             this.advancedPanel = new System.Windows.Forms.Panel();
             this.supplierLabel = new System.Windows.Forms.Label();
             this.searchLabel = new System.Windows.Forms.Label();
-            this.supplierIdComboBox = new System.Windows.Forms.ComboBox();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.shapkin_practice_shoesDataSet = new shoes.Shapkin_practice_shoesDataSet();
             this.search = new System.Windows.Forms.TextBox();
@@ -45,8 +44,10 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.productTableAdapter = new shoes.Shapkin_practice_shoesDataSetTableAdapters.ProductTableAdapter();
             this.tableAdapterManager = new shoes.Shapkin_practice_shoesDataSetTableAdapters.TableAdapterManager();
+            this.supplierBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.supplierTableAdapter = new shoes.Shapkin_practice_shoesDataSetTableAdapters.SupplierTableAdapter();
+            this.supplierComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -58,6 +59,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shapkin_practice_shoesDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,9 +102,9 @@
             // advancedPanel
             // 
             this.advancedPanel.AutoScroll = true;
+            this.advancedPanel.Controls.Add(this.supplierComboBox);
             this.advancedPanel.Controls.Add(this.supplierLabel);
             this.advancedPanel.Controls.Add(this.searchLabel);
-            this.advancedPanel.Controls.Add(this.supplierIdComboBox);
             this.advancedPanel.Controls.Add(this.search);
             this.advancedPanel.Controls.Add(this.groupBox1);
             this.advancedPanel.Dock = System.Windows.Forms.DockStyle.Left;
@@ -128,16 +130,6 @@
             this.searchLabel.Size = new System.Drawing.Size(40, 14);
             this.searchLabel.TabIndex = 4;
             this.searchLabel.Text = "Поиск:";
-            // 
-            // supplierIdComboBox
-            // 
-            this.supplierIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "SupplierId", true));
-            this.supplierIdComboBox.FormattingEnabled = true;
-            this.supplierIdComboBox.Location = new System.Drawing.Point(230, 20);
-            this.supplierIdComboBox.Name = "supplierIdComboBox";
-            this.supplierIdComboBox.Size = new System.Drawing.Size(121, 22);
-            this.supplierIdComboBox.TabIndex = 3;
-            this.supplierIdComboBox.SelectedIndexChanged += new System.EventHandler(this.supplierIdComboBox_SelectedIndexChanged);
             // 
             // productBindingSource
             // 
@@ -226,6 +218,11 @@
             this.tableAdapterManager.UpdateOrder = shoes.Shapkin_practice_shoesDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UserTableAdapter = null;
             // 
+            // supplierBindingSource1
+            // 
+            this.supplierBindingSource1.DataMember = "Supplier";
+            this.supplierBindingSource1.DataSource = this.shapkin_practice_shoesDataSet;
+            // 
             // supplierBindingSource
             // 
             this.supplierBindingSource.DataMember = "Supplier";
@@ -234,6 +231,17 @@
             // supplierTableAdapter
             // 
             this.supplierTableAdapter.ClearBeforeFill = true;
+            // 
+            // supplierComboBox
+            // 
+            this.supplierComboBox.DataSource = this.supplierBindingSource;
+            this.supplierComboBox.DisplayMember = "SupplierName";
+            this.supplierComboBox.FormattingEnabled = true;
+            this.supplierComboBox.Location = new System.Drawing.Point(235, 19);
+            this.supplierComboBox.Name = "supplierComboBox";
+            this.supplierComboBox.Size = new System.Drawing.Size(117, 22);
+            this.supplierComboBox.TabIndex = 0;
+            this.supplierComboBox.ValueMember = "IdSupplier";
             // 
             // ProductForm
             // 
@@ -256,6 +264,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.shapkin_practice_shoesDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -274,12 +283,13 @@
         private Shapkin_practice_shoesDataSet shapkin_practice_shoesDataSet;
         private System.Windows.Forms.BindingSource productBindingSource;
         private Shapkin_practice_shoesDataSetTableAdapters.ProductTableAdapter productTableAdapter;
-        private Shapkin_practice_shoesDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.ComboBox supplierIdComboBox;
         private System.Windows.Forms.Label searchLabel;
         private System.Windows.Forms.Label supplierLabel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private Shapkin_practice_shoesDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.ComboBox supplierComboBox;
         private System.Windows.Forms.BindingSource supplierBindingSource;
+        private System.Windows.Forms.BindingSource supplierBindingSource1;
         private Shapkin_practice_shoesDataSetTableAdapters.SupplierTableAdapter supplierTableAdapter;
     }
 }

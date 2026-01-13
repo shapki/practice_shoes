@@ -4,6 +4,8 @@ using shoes.AppModels;
 using shoes.AppServices;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -29,6 +31,12 @@ namespace shoes.AppForms
 
         private void ProductForm_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "shapkin_practice_shoesDataSet.Supplier". При необходимости она может быть перемещена или удалена.
+            this.supplierTableAdapter.Fill(this.shapkin_practice_shoesDataSet.Supplier);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "shapkin_practice_shoesDataSet.Supplier". При необходимости она может быть перемещена или удалена.
+            this.supplierTableAdapter.Fill(this.shapkin_practice_shoesDataSet.Supplier);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "shapkin_practice_shoesDataSet.Supplier". При необходимости она может быть перемещена или удалена.
+            this.supplierTableAdapter.Fill(this.shapkin_practice_shoesDataSet.Supplier);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "shapkin_practice_shoesDataSet.Supplier". При необходимости она может быть перемещена или удалена.
             this.supplierTableAdapter.Fill(this.shapkin_practice_shoesDataSet.Supplier);
 
@@ -75,7 +83,53 @@ namespace shoes.AppForms
 
         private void SelectProducts()
         {
-            _products = Program.context.Product.ToList();
+            string searchInput = search.Text.Trim();
+
+            bool fewerFirstInput = fewerFirst.Checked;
+
+            int supplierId = GetSupplierId();
+
+            IQueryable<Product> tmpProducts = Program.context.Product;
+            _products = tmpProducts.ToList();
+
+            if (!String.IsNullOrEmpty(searchInput))
+            {
+                tmpProducts = tmpProducts.Where(obj => DbFunctions.Like(obj.Sku, "%" + searchInput + "%")
+                || DbFunctions.Like(obj.ProductName, "%" + searchInput + "%")
+                || DbFunctions.Like(obj.UnitOfMeasurement, "%" + searchInput + "%")
+                || DbFunctions.Like(obj.Category, "%" + searchInput + "%")
+                || DbFunctions.Like(obj.Description, "%" + searchInput + "%")
+                || DbFunctions.Like(obj.Photo, "%" + searchInput + "%")
+                );
+            }
+
+            if (fewerFirstInput)
+            {
+                tmpProducts = tmpProducts.OrderBy(p => p.Stock);
+            }
+            else
+            {
+                // PKGH 
+                // Кнопки "Больше" и "Меньше" объединены в группу. При этом "Больше" по умолчанию включена.
+                // Если бы одна из кнопок не была включена по умолчанию, ситуация была бы иной (изначально у
+                // обоих кнопок было бы значение – выключена). Поэтому здесь не может быть значение false. 
+                // Debug.Assert(moreFirst.Checked);
+
+                tmpProducts = tmpProducts.OrderByDescending(p => p.Stock);
+            }
+        }
+
+        private int GetSupplierId()
+        {
+            int id = 0;
+            Supplier selected = (Supplier)supplierComboBox.SelectedItem;
+
+            if (selected != null)
+            {
+                id = (selected).IdSupplier;
+            }
+
+            return id;
         }
 
         private void fewerFirst_CheckedChanged(object sender, EventArgs e)
