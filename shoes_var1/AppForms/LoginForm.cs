@@ -10,6 +10,7 @@ namespace shoes.AppForms
         {
             InitializeComponent();
             ContextManager.parentForm = this;
+            ContextManager.parentForm.SetTitle("Вход");
         }
 
         private void loginButton_Click(object sender, EventArgs e)

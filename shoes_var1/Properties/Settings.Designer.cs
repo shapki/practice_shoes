@@ -22,5 +22,16 @@ namespace shoes.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=gogs.wsr.ru;Initial Catalog=Shapkin_practice_shoes;Persist Security I" +
+            "nfo=True;User ID=585-22;Password=126-PkghTemp-1235")]
+        public string Shapkin_practice_shoesConnectionString {
+            get {
+                return ((string)(this["Shapkin_practice_shoesConnectionString"]));
+            }
+        }
     }
 }
