@@ -49,6 +49,28 @@ namespace shoes.AppForms
             FillSupplier();
             SelectProducts();
             ShowProducts();
+            ShowAdvancedPanel();
+            ShowAddProductButton();
+            ShowOrdersButton();
+        }
+
+        /// <summary>
+        /// PKGH
+        /// Только менеджер и администратор могут сортировать, фильтровать и искать товары.
+        /// </summary>
+        private void ShowAdvancedPanel()
+        {
+            advancedPanel.Visible = (ContextManager.user.IsAdmin() || ContextManager.user.IsManager());
+        }
+
+        private void ShowAddProductButton()
+        {
+            addProductButton.Visible = ContextManager.user.IsAdmin();
+        }
+
+        private void ShowOrdersButton()
+        {
+            ordersButton.Visible = (ContextManager.user.IsAdmin() || ContextManager.user.IsManager());
         }
 
         public void Refresh()
@@ -112,11 +134,18 @@ namespace shoes.AppForms
                 // PKGH 
                 // Кнопки "Больше" и "Меньше" объединены в группу. При этом "Больше" по умолчанию включена.
                 // Если бы одна из кнопок не была включена по умолчанию, ситуация была бы иной (изначально у
-                // обоих кнопок было бы значение – выключена). Поэтому здесь не может быть значение false. 
-                // Debug.Assert(moreFirst.Checked);
+                // обоих кнопок было бы значение – выключена). Поэтому здесь не может быть значение false.
 
+                // Debug.Assert(moreFirst.Checked);
                 tmpProducts = tmpProducts.OrderByDescending(p => p.Stock);
             }
+
+            if (supplierId > 0) // PKGH 0 - "Все поставщики".
+            {
+                tmpProducts = tmpProducts.Where(p => p.SupplierId == supplierId);
+            }
+
+            _products = tmpProducts.ToList();
         }
 
         private int GetSupplierId()
@@ -142,12 +171,12 @@ namespace shoes.AppForms
             Refresh();
         }
 
-        private void supplierIdComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void search_TextChanged(object sender, EventArgs e)
         {
             Refresh();
         }
 
-        private void search_TextChanged(object sender, EventArgs e)
+        private void supplierComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             Refresh();
         }

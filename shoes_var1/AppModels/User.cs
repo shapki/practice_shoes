@@ -42,6 +42,11 @@ namespace shoes.AppModels
         {
             return this.Role == "Администратор";
         }
+
+        public bool IsManager()
+        {
+            return this.Role == "Менеджер";
+        }
         // } PKGH
     }
 }

@@ -30,24 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.button2 = new System.Windows.Forms.Button();
+            this.addProductButton = new System.Windows.Forms.Button();
             this.advancedPanel = new System.Windows.Forms.Panel();
+            this.supplierComboBox = new System.Windows.Forms.ComboBox();
+            this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.shapkin_practice_shoesDataSet = new shoes.Shapkin_practice_shoesDataSet();
             this.supplierLabel = new System.Windows.Forms.Label();
             this.searchLabel = new System.Windows.Forms.Label();
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.shapkin_practice_shoesDataSet = new shoes.Shapkin_practice_shoesDataSet();
             this.search = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.moreFirst = new System.Windows.Forms.RadioButton();
             this.fewerFirst = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ordersButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productTableAdapter = new shoes.Shapkin_practice_shoesDataSetTableAdapters.ProductTableAdapter();
             this.tableAdapterManager = new shoes.Shapkin_practice_shoesDataSetTableAdapters.TableAdapterManager();
             this.supplierBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.supplierTableAdapter = new shoes.Shapkin_practice_shoesDataSetTableAdapters.SupplierTableAdapter();
-            this.supplierComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -56,11 +56,11 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.advancedPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shapkin_practice_shoesDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -80,9 +80,9 @@
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.button2);
+            this.splitContainer2.Panel1.Controls.Add(this.addProductButton);
             this.splitContainer2.Panel1.Controls.Add(this.advancedPanel);
-            this.splitContainer2.Panel1.Controls.Add(this.button1);
+            this.splitContainer2.Panel1.Controls.Add(this.ordersButton);
             // 
             // splitContainer2.Panel2
             // 
@@ -90,14 +90,14 @@
             this.splitContainer2.Size = new System.Drawing.Size(800, 356);
             this.splitContainer2.TabIndex = 0;
             // 
-            // button2
+            // addProductButton
             // 
-            this.button2.Location = new System.Drawing.Point(618, 21);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Добавить товар";
-            this.button2.UseVisualStyleBackColor = true;
+            this.addProductButton.Location = new System.Drawing.Point(618, 21);
+            this.addProductButton.Name = "addProductButton";
+            this.addProductButton.Size = new System.Drawing.Size(98, 23);
+            this.addProductButton.TabIndex = 3;
+            this.addProductButton.Text = "Добавить товар";
+            this.addProductButton.UseVisualStyleBackColor = true;
             // 
             // advancedPanel
             // 
@@ -112,6 +112,28 @@
             this.advancedPanel.Name = "advancedPanel";
             this.advancedPanel.Size = new System.Drawing.Size(541, 50);
             this.advancedPanel.TabIndex = 0;
+            // 
+            // supplierComboBox
+            // 
+            this.supplierComboBox.DataSource = this.supplierBindingSource;
+            this.supplierComboBox.DisplayMember = "SupplierName";
+            this.supplierComboBox.FormattingEnabled = true;
+            this.supplierComboBox.Location = new System.Drawing.Point(235, 19);
+            this.supplierComboBox.Name = "supplierComboBox";
+            this.supplierComboBox.Size = new System.Drawing.Size(117, 22);
+            this.supplierComboBox.TabIndex = 0;
+            this.supplierComboBox.ValueMember = "IdSupplier";
+            this.supplierComboBox.SelectedIndexChanged += new System.EventHandler(this.supplierComboBox_SelectedIndexChanged);
+            // 
+            // supplierBindingSource
+            // 
+            this.supplierBindingSource.DataMember = "Supplier";
+            this.supplierBindingSource.DataSource = this.shapkin_practice_shoesDataSet;
+            // 
+            // shapkin_practice_shoesDataSet
+            // 
+            this.shapkin_practice_shoesDataSet.DataSetName = "Shapkin_practice_shoesDataSet";
+            this.shapkin_practice_shoesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // supplierLabel
             // 
@@ -130,16 +152,6 @@
             this.searchLabel.Size = new System.Drawing.Size(40, 14);
             this.searchLabel.TabIndex = 4;
             this.searchLabel.Text = "Поиск:";
-            // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataMember = "Product";
-            this.productBindingSource.DataSource = this.shapkin_practice_shoesDataSet;
-            // 
-            // shapkin_practice_shoesDataSet
-            // 
-            this.shapkin_practice_shoesDataSet.DataSetName = "Shapkin_practice_shoesDataSet";
-            this.shapkin_practice_shoesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // search
             // 
@@ -184,14 +196,14 @@
             this.fewerFirst.UseVisualStyleBackColor = true;
             this.fewerFirst.CheckedChanged += new System.EventHandler(this.fewerFirst_CheckedChanged);
             // 
-            // button1
+            // ordersButton
             // 
-            this.button1.Location = new System.Drawing.Point(722, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Заказы";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ordersButton.Location = new System.Drawing.Point(722, 20);
+            this.ordersButton.Name = "ordersButton";
+            this.ordersButton.Size = new System.Drawing.Size(75, 23);
+            this.ordersButton.TabIndex = 2;
+            this.ordersButton.Text = "Заказы";
+            this.ordersButton.UseVisualStyleBackColor = true;
             // 
             // flowLayoutPanel1
             // 
@@ -201,6 +213,11 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(800, 302);
             this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataMember = "Product";
+            this.productBindingSource.DataSource = this.shapkin_practice_shoesDataSet;
             // 
             // productTableAdapter
             // 
@@ -223,25 +240,9 @@
             this.supplierBindingSource1.DataMember = "Supplier";
             this.supplierBindingSource1.DataSource = this.shapkin_practice_shoesDataSet;
             // 
-            // supplierBindingSource
-            // 
-            this.supplierBindingSource.DataMember = "Supplier";
-            this.supplierBindingSource.DataSource = this.shapkin_practice_shoesDataSet;
-            // 
             // supplierTableAdapter
             // 
             this.supplierTableAdapter.ClearBeforeFill = true;
-            // 
-            // supplierComboBox
-            // 
-            this.supplierComboBox.DataSource = this.supplierBindingSource;
-            this.supplierComboBox.DisplayMember = "SupplierName";
-            this.supplierComboBox.FormattingEnabled = true;
-            this.supplierComboBox.Location = new System.Drawing.Point(235, 19);
-            this.supplierComboBox.Name = "supplierComboBox";
-            this.supplierComboBox.Size = new System.Drawing.Size(117, 22);
-            this.supplierComboBox.TabIndex = 0;
-            this.supplierComboBox.ValueMember = "IdSupplier";
             // 
             // ProductForm
             // 
@@ -260,12 +261,12 @@
             this.splitContainer2.ResumeLayout(false);
             this.advancedPanel.ResumeLayout(false);
             this.advancedPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.shapkin_practice_shoesDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -278,8 +279,8 @@
         private System.Windows.Forms.RadioButton moreFirst;
         private System.Windows.Forms.RadioButton fewerFirst;
         private System.Windows.Forms.TextBox search;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button addProductButton;
+        private System.Windows.Forms.Button ordersButton;
         private Shapkin_practice_shoesDataSet shapkin_practice_shoesDataSet;
         private System.Windows.Forms.BindingSource productBindingSource;
         private Shapkin_practice_shoesDataSetTableAdapters.ProductTableAdapter productTableAdapter;
