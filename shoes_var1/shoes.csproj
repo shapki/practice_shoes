@@ -150,6 +150,9 @@
     <EmbeddedResource Include="AppControls\ProductUserControl.resx">
       <DependentUpon>ProductUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\CreateUpdateOrderForm.resx">
+      <DependentUpon>CreateUpdateOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppForms\CreateUpdateProductForm.resx">
       <DependentUpon>CreateUpdateProductForm.cs</DependentUpon>
     </EmbeddedResource>
