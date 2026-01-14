@@ -20,6 +20,12 @@ namespace shoes.AppForms
             _product = new Product();
         }
 
+        public CreateUpdateProductForm(Product product)
+        {
+            InitializeComponent();
+            _product = product;
+        }
+
         private void FillForm()
         {
             skuTextBox.Text = _product.Sku;

@@ -186,5 +186,10 @@ namespace shoes.AppForms
             CreateUpdateProductForm CreateUpdateProductForm = new CreateUpdateProductForm();
             DialogResult saved = CreateUpdateProductForm.ShowDialog();
         }
+
+        internal void RefreshList()
+        {
+            
+        }
     }
 }

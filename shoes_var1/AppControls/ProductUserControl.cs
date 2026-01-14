@@ -1,4 +1,5 @@
 ﻿using shoes.AppExceptions;
+using shoes.AppForms;
 using shoes.AppModels;
 using shoes.AppServices;
 using System;
@@ -102,6 +103,28 @@ namespace shoes.AppControls
             }
 
             return String.Format("Цена: {0} руб.", tmpPrice.ToString("F2", CultureInfo.InvariantCulture));
+        }
+
+        private void product_Click(object sender, EventArgs e)
+        {
+            if (!ContextManager.user.IsAdmin())
+            {
+                return;
+            }
+
+            CreateUpdateProductForm сreateUpdateProductForm = new CreateUpdateProductForm(_product);
+
+            DialogResult productSaved = сreateUpdateProductForm.ShowDialog();
+
+            if (productSaved == DialogResult.OK)
+            {
+                ContextManager.productForm.RefreshList();
+            }
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
