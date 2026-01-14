@@ -42,3 +42,4 @@ D:\shoes\shoes_var1\obj\Debug\shoes.AppForms.LoginForm.resources
 D:\shoes\shoes_var1\obj\Debug\shoes.AppForms.ProductForm.resources
 D:\shoes\shoes_var1\obj\Debug\shoes.AppForms.CreateUpdateProductForm.resources
 D:\shoes\shoes_var1\obj\Debug\shoes.csproj.Up2Date
+D:\shoes\shoes_var1\obj\Debug\shoes.AppForms.OrderForm.resources

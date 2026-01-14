@@ -87,6 +87,7 @@ namespace shoes.AppForms
             {
                 string newFileName = SaveImage();
                 photoTextBox.Text = newFileName;
+                DeleteOldPhoto();
                 product = new Product();
                 FillModelFields();
                 Program.context.Product.Add(product);
@@ -97,6 +98,19 @@ namespace shoes.AppForms
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// PKGH
+        /// Старый файл удаляем.
+        /// Ситуация возможна в случае изменения товара.
+        /// </summary>
+        private void DeleteOldPhoto()
+        {
+            if (!string.IsNullOrEmpty(_product.Photo))
+            {
+                FileManager.DeleteFile(_product.Photo);
             }
         }
 

@@ -191,5 +191,12 @@ namespace shoes.AppForms
         {
             
         }
+
+        private void ordersButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            OrderForm orderForm = new OrderForm();
+            orderForm.Show();
+        }
     }
 }

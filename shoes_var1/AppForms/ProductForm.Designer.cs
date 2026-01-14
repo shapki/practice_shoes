@@ -205,6 +205,7 @@
             this.ordersButton.TabIndex = 2;
             this.ordersButton.Text = "Заказы";
             this.ordersButton.UseVisualStyleBackColor = true;
+            this.ordersButton.Click += new System.EventHandler(this.ordersButton_Click);
             // 
             // flowLayoutPanel1
             // 

@@ -14,6 +14,6 @@ namespace shoes.AppExceptions
         public static ParentForm parentForm;
         public static ProductForm productForm;
         public static LoginForm loginForm;
+        public static OrderForm orderForm;
     }
-
 }
