@@ -266,6 +266,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "CreateUpdateOrderForm";
             this.Load += new System.EventHandler(this.CreateUpdateOrderForm_Load);
+            this.Shown += new System.EventHandler(this.CreateUpdateOrderForm_Shown);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();

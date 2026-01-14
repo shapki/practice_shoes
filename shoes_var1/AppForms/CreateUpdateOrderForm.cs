@@ -21,7 +21,6 @@ namespace shoes.AppForms
         {
             InitializeComponent();
             _order = order;
-            FillForm();
         }
 
         private void FillForm()
@@ -29,6 +28,7 @@ namespace shoes.AppForms
             idOrderLabel1.Text = _order.IdOrder.ToString();
             dateDateTimePicker.Value = _order.Date;
             deliveryDateDateTimePicker.Value = _order.DeliveryDate;
+            officeIdComboBox.SelectedValue = _order.OfficeId;
             clientIdComboBox.SelectedValue = _order.ClientId;
             statusComboBox.Text = _order.Status;
         }
@@ -44,8 +44,9 @@ namespace shoes.AppForms
             // TODO: данная строка кода позволяет загрузить данные в таблицу "shapkin_practice_shoesDataSet.Office". При необходимости она может быть перемещена или удалена.
             this.officeTableAdapter.Fill(this.shapkin_practice_shoesDataSet.Office);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "shapkin_practice_shoesDataSet.Order". При необходимости она может быть перемещена или удалена.
-            this.orderTableAdapter.Fill(this.shapkin_practice_shoesDataSet.Order);
+            //this.orderTableAdapter.Fill(this.shapkin_practice_shoesDataSet.Order);
 
+            FillForm();
         }
 
         private int GenerateNextReceiptCode()
@@ -102,6 +103,11 @@ namespace shoes.AppForms
             {
                 FormManager.ErrorProvider.SetError(deliveryDateDateTimePicker, null);
             }
+        }
+
+        private void CreateUpdateOrderForm_Shown(object sender, EventArgs e)
+        {
+            FormManager.PrepareForm("Добавить/редактировать заказ", false);
         }
     }
 }
