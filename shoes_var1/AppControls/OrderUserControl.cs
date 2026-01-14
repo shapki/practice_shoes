@@ -1,7 +1,10 @@
 ﻿using shoes.AppExceptions;
 using shoes.AppForms;
 using shoes.AppModels;
+using shoes.AppServices;
 using System;
+using System.Data.Entity.Infrastructure;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace shoes.AppControls
@@ -45,6 +48,27 @@ namespace shoes.AppControls
             if (saved == DialogResult.OK)
             {
                 ContextManager.orderForm.RefreshList();
+            }
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            DialogResult toBeDeleted = MessageBox.Show("Удалить?", "Удалить?", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+            if (toBeDeleted == DialogResult.OK)
+            {
+                Order order = Program.context.Order.Where(p => p.IdOrder == this._order.IdOrder).FirstOrDefault();
+
+                try
+                {
+                    Program.context.Order.Remove(_order);
+                    Program.context.SaveChanges();
+                    ContextManager.orderForm.RefreshList();
+                }
+                catch (DbUpdateException ex)
+                {
+                    MessageBox.Show("Не удалось удалить заказ.", "Не удалось удалить заказ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }
