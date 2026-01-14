@@ -7,6 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Infrastructure;
 using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
@@ -76,7 +77,7 @@ namespace shoes.AppControls
             try
             {
                 {
-                    img = Image.FromFile(FileManager.GetImgPath(_product.Photo));
+                    img = new Bitmap(Image.FromFile(FileManager.GetImgPath(_product.Photo)));
                 }
 
             }
@@ -124,7 +125,24 @@ namespace shoes.AppControls
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
+            DialogResult toBeDeleted = MessageBox.Show("Удалить?", "Удалить?", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 
+            if (toBeDeleted == DialogResult.OK)
+            {
+                Product product = Program.context.Product.Where(p => p.IdProduct == this._product.IdProduct).FirstOrDefault();
+
+                try
+                {
+                    Program.context.Product.Remove(_product);
+                    Program.context.SaveChanges();
+                    ContextManager.productForm.RefreshList();
+                    FileManager.DeleteFile(_product.Photo);
+                }
+                catch (DbUpdateException ex)
+                {
+                    MessageBox.Show("Товар заказан. Его нельзя удалить.", "Товар заказан. Его нельзя удалить.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }
