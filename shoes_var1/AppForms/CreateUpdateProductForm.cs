@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace shoes.AppForms
@@ -70,6 +71,12 @@ namespace shoes.AppForms
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            if (!this.ValidateChildren())
+            {
+                MessageBox.Show("Исправьте ошибки в форме перед сохранением.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             try
             {
                 string newFileName = SaveImage();
@@ -150,6 +157,32 @@ namespace shoes.AppForms
             if (dialogResult == DialogResult.OK)
             {
                 photoTextBox.Text = Path.GetFileName(openFileDialog1.FileName);
+            }
+        }
+
+        private void ValidateGeneral(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            FormManager.ValidateGeneral(sender, e);
+        }
+
+        private void priceTextBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            FormManager.ValidateGeneral(sender, e);
+
+            Regex regex = new Regex(@"^\d+(\.\d{1,2})?$");
+
+            CultureInfo culture = CultureInfo.InvariantCulture; // PKGH '.' - десятичный разделитель.
+            float val;
+
+            if (!regex.IsMatch(priceTextBox.Text))
+            {
+                e.Cancel = true; // PKGH Предотвратить потерю фокуса.
+                FormManager.ErrorProvider.SetError(priceTextBox, "Допустимо неотрицательное число. Не более двух знаков после запятой. Десятичный разделитель - точка."); // PKGH показать подсказку.
+            }
+            else if (float.TryParse(priceTextBox.Text, NumberStyles.Float, culture, out val) && val == 0f)
+            {
+                e.Cancel = true; // PKGH Предотвратить потерю фокуса.
+                FormManager.ErrorProvider.SetError(priceTextBox, "Вы бесплатно раздаете?"); // PKGH показать подсказку.                
             }
         }
     }

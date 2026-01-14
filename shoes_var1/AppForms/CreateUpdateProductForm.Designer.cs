@@ -260,6 +260,7 @@
             this.skuTextBox.Name = "skuTextBox";
             this.skuTextBox.Size = new System.Drawing.Size(236, 20);
             this.skuTextBox.TabIndex = 23;
+            this.skuTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateGeneral);
             // 
             // productNameComboBox
             // 
@@ -278,6 +279,7 @@
             this.productNameComboBox.Name = "productNameComboBox";
             this.productNameComboBox.Size = new System.Drawing.Size(236, 22);
             this.productNameComboBox.TabIndex = 25;
+            this.productNameComboBox.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateGeneral);
             // 
             // unitOfMeasurementListBox
             // 
@@ -290,6 +292,7 @@
             this.unitOfMeasurementListBox.Name = "unitOfMeasurementListBox";
             this.unitOfMeasurementListBox.Size = new System.Drawing.Size(236, 18);
             this.unitOfMeasurementListBox.TabIndex = 27;
+            this.unitOfMeasurementListBox.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateGeneral);
             // 
             // priceTextBox
             // 
@@ -298,6 +301,7 @@
             this.priceTextBox.Name = "priceTextBox";
             this.priceTextBox.Size = new System.Drawing.Size(236, 20);
             this.priceTextBox.TabIndex = 29;
+            this.priceTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.priceTextBox_Validating);
             // 
             // supplierIdComboBox
             // 
@@ -311,6 +315,7 @@
             this.supplierIdComboBox.Size = new System.Drawing.Size(236, 22);
             this.supplierIdComboBox.TabIndex = 31;
             this.supplierIdComboBox.ValueMember = "IdSupplier";
+            this.supplierIdComboBox.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateGeneral);
             // 
             // supplierBindingSource
             // 
@@ -329,6 +334,7 @@
             this.manufacturerIdComboBox.Size = new System.Drawing.Size(236, 22);
             this.manufacturerIdComboBox.TabIndex = 33;
             this.manufacturerIdComboBox.ValueMember = "Idmanufacturer";
+            this.manufacturerIdComboBox.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateGeneral);
             // 
             // manufacturerBindingSource
             // 
@@ -347,6 +353,7 @@
             this.categoryComboBox.Name = "categoryComboBox";
             this.categoryComboBox.Size = new System.Drawing.Size(236, 22);
             this.categoryComboBox.TabIndex = 35;
+            this.categoryComboBox.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateGeneral);
             // 
             // discountNumericUpDown
             // 
@@ -371,6 +378,7 @@
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.Size = new System.Drawing.Size(236, 20);
             this.descriptionTextBox.TabIndex = 41;
+            this.descriptionTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateGeneral);
             // 
             // photoTextBox
             // 
