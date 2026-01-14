@@ -28,7 +28,104 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.orderIdlabel = new System.Windows.Forms.Label();
+            this.statusLabel = new System.Windows.Forms.Label();
+            this.officeLabel = new System.Windows.Forms.Label();
+            this.orderDateLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.deliveryDateLabel = new System.Windows.Forms.Label();
+            this.deleteButton = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.deliveryDateLabel);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(635, 17);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(84, 84);
+            this.panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.deleteButton);
+            this.panel2.Controls.Add(this.orderDateLabel);
+            this.panel2.Controls.Add(this.officeLabel);
+            this.panel2.Controls.Add(this.statusLabel);
+            this.panel2.Controls.Add(this.orderIdlabel);
+            this.panel2.Location = new System.Drawing.Point(15, 17);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(601, 84);
+            this.panel2.TabIndex = 1;
+            // 
+            // orderIdlabel
+            // 
+            this.orderIdlabel.AutoSize = true;
+            this.orderIdlabel.Location = new System.Drawing.Point(16, 6);
+            this.orderIdlabel.Name = "orderIdlabel";
+            this.orderIdlabel.Size = new System.Drawing.Size(16, 13);
+            this.orderIdlabel.TabIndex = 0;
+            this.orderIdlabel.Text = "Id";
+            // 
+            // statusLabel
+            // 
+            this.statusLabel.AutoSize = true;
+            this.statusLabel.Location = new System.Drawing.Point(16, 25);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(41, 13);
+            this.statusLabel.TabIndex = 1;
+            this.statusLabel.Text = "Статус";
+            // 
+            // officeLabel
+            // 
+            this.officeLabel.AutoSize = true;
+            this.officeLabel.Location = new System.Drawing.Point(16, 45);
+            this.officeLabel.Name = "officeLabel";
+            this.officeLabel.Size = new System.Drawing.Size(115, 13);
+            this.officeLabel.TabIndex = 2;
+            this.officeLabel.Text = "Адрес пункта выдачи";
+            // 
+            // orderDateLabel
+            // 
+            this.orderDateLabel.AutoSize = true;
+            this.orderDateLabel.Location = new System.Drawing.Point(16, 64);
+            this.orderDateLabel.Name = "orderDateLabel";
+            this.orderDateLabel.Size = new System.Drawing.Size(72, 13);
+            this.orderDateLabel.TabIndex = 3;
+            this.orderDateLabel.Text = "Дата заказа";
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(-1, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 23);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Дата заказа";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // deliveryDateLabel
+            // 
+            this.deliveryDateLabel.Location = new System.Drawing.Point(-1, 24);
+            this.deliveryDateLabel.Name = "deliveryDateLabel";
+            this.deliveryDateLabel.Size = new System.Drawing.Size(84, 23);
+            this.deliveryDateLabel.TabIndex = 1;
+            this.deliveryDateLabel.Text = "Дата";
+            this.deliveryDateLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.deleteButton.Location = new System.Drawing.Point(523, 58);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteButton.TabIndex = 9;
+            this.deleteButton.Text = "Удалить";
+            this.deleteButton.UseVisualStyleBackColor = false;
             // 
             // OrderUserControl
             // 
@@ -36,13 +133,28 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(20, 0, 0, 20);
             this.Name = "OrderUserControl";
-            this.Size = new System.Drawing.Size(738, 148);
+            this.Size = new System.Drawing.Size(740, 119);
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label statusLabel;
+        private System.Windows.Forms.Label orderIdlabel;
+        private System.Windows.Forms.Label officeLabel;
+        private System.Windows.Forms.Label orderDateLabel;
+        private System.Windows.Forms.Label deliveryDateLabel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button deleteButton;
     }
 }

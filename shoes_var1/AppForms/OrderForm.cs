@@ -62,7 +62,7 @@ namespace shoes.AppForms
             List<Order> orders = Program.context.Order.OrderBy(o => o.Date).ToList();
             foreach (Order order in orders)
             {
-                flowLayoutPanel1.Controls.Add(new OrderUserControl());
+                flowLayoutPanel1.Controls.Add(new OrderUserControl(order));
             }
         }
 
