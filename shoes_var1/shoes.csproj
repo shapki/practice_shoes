@@ -75,6 +75,12 @@
     <Compile Include="AppConstants\Color.cs" />
     <Compile Include="AppConstants\FilePath.cs" />
     <Compile Include="AppControls\FilePath.cs" />
+    <Compile Include="AppControls\OrderUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppControls\OrderUserControl.Designer.cs">
+      <DependentUpon>OrderUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppControls\ProductUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -85,6 +91,12 @@
     <Compile Include="AppExceptions\Color.cs" />
     <Compile Include="AppExceptions\ContextManager.cs" />
     <Compile Include="AppExceptions\UnauthorizedException.cs" />
+    <Compile Include="AppForms\CreateUpdateOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\CreateUpdateOrderForm.Designer.cs">
+      <DependentUpon>CreateUpdateOrderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppForms\CreateUpdateProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +144,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Shapkin_practice_shoesDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AppControls\OrderUserControl.resx">
+      <DependentUpon>OrderUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppControls\ProductUserControl.resx">
       <DependentUpon>ProductUserControl.cs</DependentUpon>
     </EmbeddedResource>
