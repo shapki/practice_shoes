@@ -41,6 +41,12 @@ namespace shoes.AppControls
             statusLabel.Text = "Статус заказа: " + _order.Status;
         }
 
+        /// <summary>
+        /// PKGH
+        /// Обработка нажатия по заказу
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// </summary>
         private void order_Click(object sender, EventArgs e)
         {
             if (!ContextManager.user.IsAdmin())
@@ -58,6 +64,12 @@ namespace shoes.AppControls
             }
         }
 
+        /// <summary>
+        /// PKGH
+        /// Обработка кнопки удаления
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// </summary>
         private void deleteButton_Click(object sender, EventArgs e)
         {
             DialogResult toBeDeleted = MessageBox.Show("Удалить?", "Удалить?", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);

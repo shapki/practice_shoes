@@ -114,6 +114,11 @@ namespace shoes.AppForms
             }
         }
 
+        /// <summary>
+        /// PKGH
+        /// Сохранение изображения товара
+        /// </summary>
+        /// <returns></returns>
         private string SaveImage()
         {
             // PKGH Файл не выбирали, но нажали кнопку "Сохранить".

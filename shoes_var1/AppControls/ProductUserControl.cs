@@ -3,9 +3,6 @@ using shoes.AppForms;
 using shoes.AppModels;
 using shoes.AppServices;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.Entity.Infrastructure;
 using System.Diagnostics;
@@ -13,8 +10,6 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace shoes.AppControls
@@ -106,6 +101,12 @@ namespace shoes.AppControls
             return String.Format("Цена: {0} руб.", tmpPrice.ToString("F2", CultureInfo.InvariantCulture));
         }
 
+        /// <summary>
+        /// PKGH
+        /// Обработка нажатия по товару
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// </summary>
         private void product_Click(object sender, EventArgs e)
         {
             if (!ContextManager.user.IsAdmin())
@@ -123,6 +124,12 @@ namespace shoes.AppControls
             }
         }
 
+        /// <summary>
+        /// PKGH
+        /// Обработка кнопки удаления
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// </summary>
         private void deleteButton_Click(object sender, EventArgs e)
         {
             DialogResult toBeDeleted = MessageBox.Show("Удалить?", "Удалить?", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);

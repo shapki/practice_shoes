@@ -11,6 +11,13 @@ namespace shoes.AppExceptions
     /// </summary>
     internal class AuthManager /// Поскольку вышенаписанной код, не самый лучший (не рабочий), то вот милсударь, рабочий, мать его, код. Еще бывает ошибка отсутствия пользователя G G, он же Гость. Создать его надбыть в БД окоянной с помощью команды || INSERT INTO[User] (Role, FullName, Login, Password) VALUES('Клиент', 'гость', 'g', 'g'); ||
     {
+        /// <summary>
+        /// PKGH
+        /// Вход в профиль
+        /// </summary>
+        /// <param name="login">Логин</param>
+        /// <param name="password">Пароль</param>
+        /// <exception cref="UnauthorizedException">Ошибка авторизации</exception>
         public static void Login(string login, string password)
         {
             User tmpUser = Program.context.User
@@ -30,6 +37,11 @@ namespace shoes.AppExceptions
             productForm.Show();
             ContextManager.loginForm.Hide();
         }
+        /// <summary>
+        /// PKGH
+        /// Выход из профиля
+        /// </summary>
+        /// <param name="form"></param>
         public static void Logout(ParentForm form)
         {
             ContextManager.user = null;

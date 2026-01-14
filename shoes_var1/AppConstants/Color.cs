@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace shoes.AppConstants
 {
+    /// <summary>
+    /// PKGH
+    /// Цвета приложения
+    /// </summary>
     internal class Color
     {
         public static readonly string auxBackground = "#7FFF00";

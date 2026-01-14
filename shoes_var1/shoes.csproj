@@ -74,7 +74,6 @@
   <ItemGroup>
     <Compile Include="AppConstants\Color.cs" />
     <Compile Include="AppConstants\FilePath.cs" />
-    <Compile Include="AppControls\FilePath.cs" />
     <Compile Include="AppControls\OrderUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -88,7 +87,6 @@
       <DependentUpon>ProductUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="AppExceptions\AuthManager.cs" />
-    <Compile Include="AppExceptions\Color.cs" />
     <Compile Include="AppExceptions\ContextManager.cs" />
     <Compile Include="AppExceptions\UnauthorizedException.cs" />
     <Compile Include="AppForms\CreateUpdateOrderForm.cs">

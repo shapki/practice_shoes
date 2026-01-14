@@ -54,7 +54,7 @@ namespace shoes.AppForms
         {
             RefreshList();
         }
-
+        
         public void RefreshList()
         {
             ClearOrders();

@@ -83,6 +83,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "OrderForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OrderForm_FormClosed);
             this.Load += new System.EventHandler(this.OrderForm_Load);

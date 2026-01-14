@@ -247,7 +247,7 @@
             this.saveProductButton.BackColor = System.Drawing.Color.MediumSpringGreen;
             this.saveProductButton.Location = new System.Drawing.Point(234, 319);
             this.saveProductButton.Name = "saveProductButton";
-            this.saveProductButton.Size = new System.Drawing.Size(356, 23);
+            this.saveProductButton.Size = new System.Drawing.Size(356, 28);
             this.saveProductButton.TabIndex = 22;
             this.saveProductButton.Text = "Сохранить";
             this.saveProductButton.UseVisualStyleBackColor = false;
@@ -290,7 +290,7 @@
             "шт."});
             this.unitOfMeasurementListBox.Location = new System.Drawing.Point(354, 73);
             this.unitOfMeasurementListBox.Name = "unitOfMeasurementListBox";
-            this.unitOfMeasurementListBox.Size = new System.Drawing.Size(236, 18);
+            this.unitOfMeasurementListBox.Size = new System.Drawing.Size(236, 32);
             this.unitOfMeasurementListBox.TabIndex = 27;
             this.unitOfMeasurementListBox.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateGeneral);
             // 
@@ -401,7 +401,7 @@
             // 
             this.openFileDialogButton.Location = new System.Drawing.Point(516, 286);
             this.openFileDialogButton.Name = "openFileDialogButton";
-            this.openFileDialogButton.Size = new System.Drawing.Size(75, 23);
+            this.openFileDialogButton.Size = new System.Drawing.Size(75, 28);
             this.openFileDialogButton.TabIndex = 44;
             this.openFileDialogButton.Text = "Файл";
             this.openFileDialogButton.UseVisualStyleBackColor = true;

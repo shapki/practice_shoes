@@ -10,6 +10,7 @@ namespace shoes.AppForms
     public partial class CreateUpdateOrderForm : shoes.AppForms.ParentForm
     {
         private Order _order;
+        private bool editing = false;
         public CreateUpdateOrderForm()
         {
             InitializeComponent();
@@ -21,6 +22,7 @@ namespace shoes.AppForms
         {
             InitializeComponent();
             _order = order;
+            editing = true;
         }
 
         private void FillForm()
@@ -46,7 +48,8 @@ namespace shoes.AppForms
             // TODO: данная строка кода позволяет загрузить данные в таблицу "shapkin_practice_shoesDataSet.Order". При необходимости она может быть перемещена или удалена.
             //this.orderTableAdapter.Fill(this.shapkin_practice_shoesDataSet.Order);
 
-            FillForm();
+            if (editing)
+                FillForm();
         }
 
         private int GenerateNextReceiptCode()
