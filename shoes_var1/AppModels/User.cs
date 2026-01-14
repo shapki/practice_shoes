@@ -47,6 +47,11 @@ namespace shoes.AppModels
         {
             return this.Role == "Менеджер";
         }
+
+        public bool IsAuthUser()
+        {
+            return this.Role == "Авторизированный клиент";
+        }
         // } PKGH
     }
 }

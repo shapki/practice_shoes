@@ -70,7 +70,7 @@ namespace shoes.AppForms
 
         private void ShowOrdersButton()
         {
-            ordersButton.Visible = (ContextManager.user.IsAdmin() || ContextManager.user.IsManager());
+            ordersButton.Visible = (ContextManager.user.IsAdmin() || ContextManager.user.IsManager() || ContextManager.user.IsAuthUser());
         }
 
         public void Refresh()

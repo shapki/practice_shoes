@@ -16,6 +16,13 @@ namespace shoes.AppControls
         {
             InitializeComponent();
             _order = order;
+
+            if (ContextManager.user.IsAuthUser() && _order.ClientId != ContextManager.user.IdUser)
+            {
+                this.Visible = false;
+                return;
+            }
+
             ShowData();
             ShowDeleteButton();
         }
