@@ -205,5 +205,31 @@ namespace shoes.AppForms
                 FormManager.ErrorProvider.SetError(priceTextBox, "Вы бесплатно раздаете?"); // PKGH показать подсказку.                
             }
         }
+
+        private void saveProductButton_Click(object sender, EventArgs e)
+        {
+            if (!this.ValidateChildren())
+            {
+                MessageBox.Show("Исправьте ошибки в форме перед сохранением.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                string newFileName = SaveImage();
+                photoTextBox.Text = newFileName;
+                DeleteOldPhoto();
+                product = new Product();
+                FillModelFields();
+                Program.context.Product.Add(product);
+                Program.context.SaveChangesAsync();
+                MessageBox.Show("Данные сохранены", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DialogResult = DialogResult.OK;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

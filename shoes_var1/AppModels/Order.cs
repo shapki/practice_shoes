@@ -40,5 +40,12 @@ namespace shoes.AppModels
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderProduct> OrderProduct { get; set; }
+
+        // PKGH {
+        public bool IsNew()
+        {
+            return (IdOrder == 0);
+        }
+        // } PKGH 
     }
 }

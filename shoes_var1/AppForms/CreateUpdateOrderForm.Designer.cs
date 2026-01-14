@@ -43,12 +43,13 @@
             this.dateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.deliveryDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.officeIdComboBox = new System.Windows.Forms.ComboBox();
-            this.clientIdComboBox = new System.Windows.Forms.ComboBox();
-            this.statusComboBox = new System.Windows.Forms.ComboBox();
             this.officeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.officeTableAdapter = new shoes.Shapkin_practice_shoesDataSetTableAdapters.OfficeTableAdapter();
+            this.clientIdComboBox = new System.Windows.Forms.ComboBox();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.statusComboBox = new System.Windows.Forms.ComboBox();
+            this.officeTableAdapter = new shoes.Shapkin_practice_shoesDataSetTableAdapters.OfficeTableAdapter();
             this.userTableAdapter = new shoes.Shapkin_practice_shoesDataSetTableAdapters.UserTableAdapter();
+            this.saveButton = new System.Windows.Forms.Button();
             idOrderLabel = new System.Windows.Forms.Label();
             dateLabel = new System.Windows.Forms.Label();
             deliveryDateLabel = new System.Windows.Forms.Label();
@@ -69,6 +70,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.saveButton);
             this.splitContainer1.Panel2.Controls.Add(idOrderLabel);
             this.splitContainer1.Panel2.Controls.Add(this.idOrderLabel1);
             this.splitContainer1.Panel2.Controls.Add(dateLabel);
@@ -85,56 +87,56 @@
             // idOrderLabel
             // 
             idOrderLabel.AutoSize = true;
-            idOrderLabel.Location = new System.Drawing.Point(269, 78);
+            idOrderLabel.Location = new System.Drawing.Point(237, 39);
             idOrderLabel.Name = "idOrderLabel";
-            idOrderLabel.Size = new System.Drawing.Size(48, 14);
+            idOrderLabel.Size = new System.Drawing.Size(16, 14);
             idOrderLabel.TabIndex = 0;
-            idOrderLabel.Text = "Id Order:";
+            idOrderLabel.Text = "Id";
             // 
             // dateLabel
             // 
             dateLabel.AutoSize = true;
-            dateLabel.Location = new System.Drawing.Point(269, 108);
+            dateLabel.Location = new System.Drawing.Point(237, 69);
             dateLabel.Name = "dateLabel";
-            dateLabel.Size = new System.Drawing.Size(32, 14);
+            dateLabel.Size = new System.Drawing.Size(61, 14);
             dateLabel.TabIndex = 2;
-            dateLabel.Text = "Date:";
+            dateLabel.Text = "Дата заказа";
             // 
             // deliveryDateLabel
             // 
             deliveryDateLabel.AutoSize = true;
-            deliveryDateLabel.Location = new System.Drawing.Point(269, 134);
+            deliveryDateLabel.Location = new System.Drawing.Point(237, 95);
             deliveryDateLabel.Name = "deliveryDateLabel";
-            deliveryDateLabel.Size = new System.Drawing.Size(75, 14);
+            deliveryDateLabel.Size = new System.Drawing.Size(67, 14);
             deliveryDateLabel.TabIndex = 4;
-            deliveryDateLabel.Text = "Delivery Date:";
+            deliveryDateLabel.Text = "Дата выдачи";
             // 
             // officeIdLabel
             // 
             officeIdLabel.AutoSize = true;
-            officeIdLabel.Location = new System.Drawing.Point(269, 159);
+            officeIdLabel.Location = new System.Drawing.Point(237, 120);
             officeIdLabel.Name = "officeIdLabel";
-            officeIdLabel.Size = new System.Drawing.Size(51, 14);
+            officeIdLabel.Size = new System.Drawing.Size(109, 14);
             officeIdLabel.TabIndex = 6;
-            officeIdLabel.Text = "Office Id:";
+            officeIdLabel.Text = "Адрес пункта выдачи";
             // 
             // clientIdLabel
             // 
             clientIdLabel.AutoSize = true;
-            clientIdLabel.Location = new System.Drawing.Point(269, 187);
+            clientIdLabel.Location = new System.Drawing.Point(237, 148);
             clientIdLabel.Name = "clientIdLabel";
-            clientIdLabel.Size = new System.Drawing.Size(50, 14);
+            clientIdLabel.Size = new System.Drawing.Size(41, 14);
             clientIdLabel.TabIndex = 8;
-            clientIdLabel.Text = "Client Id:";
+            clientIdLabel.Text = "Клиент";
             // 
             // statusLabel
             // 
             statusLabel.AutoSize = true;
-            statusLabel.Location = new System.Drawing.Point(269, 215);
+            statusLabel.Location = new System.Drawing.Point(237, 176);
             statusLabel.Name = "statusLabel";
-            statusLabel.Size = new System.Drawing.Size(37, 14);
+            statusLabel.Size = new System.Drawing.Size(40, 14);
             statusLabel.TabIndex = 10;
-            statusLabel.Text = "Status:";
+            statusLabel.Text = "Статус";
             // 
             // shapkin_practice_shoesDataSet
             // 
@@ -165,27 +167,28 @@
             // idOrderLabel1
             // 
             this.idOrderLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.orderBindingSource, "IdOrder", true));
-            this.idOrderLabel1.Location = new System.Drawing.Point(350, 78);
+            this.idOrderLabel1.Location = new System.Drawing.Point(352, 39);
             this.idOrderLabel1.Name = "idOrderLabel1";
-            this.idOrderLabel1.Size = new System.Drawing.Size(200, 23);
+            this.idOrderLabel1.Size = new System.Drawing.Size(244, 23);
             this.idOrderLabel1.TabIndex = 1;
             this.idOrderLabel1.Text = "--";
             // 
             // dateDateTimePicker
             // 
             this.dateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.orderBindingSource, "Date", true));
-            this.dateDateTimePicker.Location = new System.Drawing.Point(350, 104);
+            this.dateDateTimePicker.Location = new System.Drawing.Point(352, 65);
             this.dateDateTimePicker.Name = "dateDateTimePicker";
-            this.dateDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.dateDateTimePicker.Size = new System.Drawing.Size(244, 20);
             this.dateDateTimePicker.TabIndex = 3;
             // 
             // deliveryDateDateTimePicker
             // 
             this.deliveryDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.orderBindingSource, "DeliveryDate", true));
-            this.deliveryDateDateTimePicker.Location = new System.Drawing.Point(350, 130);
+            this.deliveryDateDateTimePicker.Location = new System.Drawing.Point(352, 91);
             this.deliveryDateDateTimePicker.Name = "deliveryDateDateTimePicker";
-            this.deliveryDateDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.deliveryDateDateTimePicker.Size = new System.Drawing.Size(244, 20);
             this.deliveryDateDateTimePicker.TabIndex = 5;
+            this.deliveryDateDateTimePicker.Validating += new System.ComponentModel.CancelEventHandler(this.deliveryDateDateTimePicker_Validating);
             // 
             // officeIdComboBox
             // 
@@ -195,11 +198,16 @@
             this.officeIdComboBox.DisplayMember = "Address";
             this.officeIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.officeIdComboBox.FormattingEnabled = true;
-            this.officeIdComboBox.Location = new System.Drawing.Point(350, 156);
+            this.officeIdComboBox.Location = new System.Drawing.Point(352, 117);
             this.officeIdComboBox.Name = "officeIdComboBox";
-            this.officeIdComboBox.Size = new System.Drawing.Size(200, 22);
+            this.officeIdComboBox.Size = new System.Drawing.Size(244, 22);
             this.officeIdComboBox.TabIndex = 7;
             this.officeIdComboBox.ValueMember = "IdOffice";
+            // 
+            // officeBindingSource
+            // 
+            this.officeBindingSource.DataMember = "Office";
+            this.officeBindingSource.DataSource = this.shapkin_practice_shoesDataSet;
             // 
             // clientIdComboBox
             // 
@@ -209,11 +217,16 @@
             this.clientIdComboBox.DisplayMember = "FullName";
             this.clientIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.clientIdComboBox.FormattingEnabled = true;
-            this.clientIdComboBox.Location = new System.Drawing.Point(350, 184);
+            this.clientIdComboBox.Location = new System.Drawing.Point(352, 145);
             this.clientIdComboBox.Name = "clientIdComboBox";
-            this.clientIdComboBox.Size = new System.Drawing.Size(200, 22);
+            this.clientIdComboBox.Size = new System.Drawing.Size(244, 22);
             this.clientIdComboBox.TabIndex = 9;
             this.clientIdComboBox.ValueMember = "IdUser";
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataMember = "User";
+            this.userBindingSource.DataSource = this.shapkin_practice_shoesDataSet;
             // 
             // statusComboBox
             // 
@@ -223,28 +236,29 @@
             this.statusComboBox.Items.AddRange(new object[] {
             "Новый",
             "Завершен"});
-            this.statusComboBox.Location = new System.Drawing.Point(350, 212);
+            this.statusComboBox.Location = new System.Drawing.Point(352, 173);
             this.statusComboBox.Name = "statusComboBox";
-            this.statusComboBox.Size = new System.Drawing.Size(200, 22);
+            this.statusComboBox.Size = new System.Drawing.Size(244, 22);
             this.statusComboBox.TabIndex = 11;
-            // 
-            // officeBindingSource
-            // 
-            this.officeBindingSource.DataMember = "Office";
-            this.officeBindingSource.DataSource = this.shapkin_practice_shoesDataSet;
             // 
             // officeTableAdapter
             // 
             this.officeTableAdapter.ClearBeforeFill = true;
             // 
-            // userBindingSource
-            // 
-            this.userBindingSource.DataMember = "User";
-            this.userBindingSource.DataSource = this.shapkin_practice_shoesDataSet;
-            // 
             // userTableAdapter
             // 
             this.userTableAdapter.ClearBeforeFill = true;
+            // 
+            // saveButton
+            // 
+            this.saveButton.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.saveButton.Location = new System.Drawing.Point(240, 201);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(356, 23);
+            this.saveButton.TabIndex = 23;
+            this.saveButton.Text = "Сохранить";
+            this.saveButton.UseVisualStyleBackColor = false;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // CreateUpdateOrderForm
             // 
@@ -280,5 +294,6 @@
         private Shapkin_practice_shoesDataSetTableAdapters.OfficeTableAdapter officeTableAdapter;
         private System.Windows.Forms.BindingSource userBindingSource;
         private Shapkin_practice_shoesDataSetTableAdapters.UserTableAdapter userTableAdapter;
+        private System.Windows.Forms.Button saveButton;
     }
 }

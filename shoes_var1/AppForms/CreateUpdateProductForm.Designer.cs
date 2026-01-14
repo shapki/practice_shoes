@@ -251,7 +251,7 @@
             this.saveProductButton.TabIndex = 22;
             this.saveProductButton.Text = "Сохранить";
             this.saveProductButton.UseVisualStyleBackColor = false;
-            this.saveProductButton.Click += new System.EventHandler(this.saveButton_Click);
+            this.saveProductButton.Click += new System.EventHandler(this.saveProductButton_Click);
             // 
             // skuTextBox
             // 

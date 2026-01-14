@@ -44,6 +44,10 @@ namespace shoes.AppForms
             CreateUpdateOrderForm createUpdateOrder = new CreateUpdateOrderForm();
             DialogResult saved = createUpdateOrder.ShowDialog();
 
+            if (saved == DialogResult.OK)
+            {
+                RefreshList();
+            }
         }
 
         private void OrderForm_Load(object sender, EventArgs e)
