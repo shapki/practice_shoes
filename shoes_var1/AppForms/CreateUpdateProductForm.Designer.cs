@@ -44,7 +44,7 @@
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productTableAdapter = new shoes.Shapkin_practice_shoesDataSetTableAdapters.ProductTableAdapter();
             this.tableAdapterManager = new shoes.Shapkin_practice_shoesDataSetTableAdapters.TableAdapterManager();
-            this.saveButton = new System.Windows.Forms.Button();
+            this.saveProductButton = new System.Windows.Forms.Button();
             this.skuTextBox = new System.Windows.Forms.TextBox();
             this.productNameComboBox = new System.Windows.Forms.ComboBox();
             this.unitOfMeasurementListBox = new System.Windows.Forms.ListBox();
@@ -60,6 +60,8 @@
             this.photoTextBox = new System.Windows.Forms.TextBox();
             this.supplierTableAdapter = new shoes.Shapkin_practice_shoesDataSetTableAdapters.SupplierTableAdapter();
             this.manufacturerTableAdapter = new shoes.Shapkin_practice_shoesDataSetTableAdapters.ManufacturerTableAdapter();
+            this.openFileDialogButton = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             skuLabel = new System.Windows.Forms.Label();
             productNameLabel = new System.Windows.Forms.Label();
             unitOfMeasurementLabel = new System.Windows.Forms.Label();
@@ -88,6 +90,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.AutoScroll = true;
+            this.splitContainer1.Panel2.Controls.Add(this.openFileDialogButton);
             this.splitContainer1.Panel2.Controls.Add(skuLabel);
             this.splitContainer1.Panel2.Controls.Add(this.skuTextBox);
             this.splitContainer1.Panel2.Controls.Add(productNameLabel);
@@ -110,14 +113,14 @@
             this.splitContainer1.Panel2.Controls.Add(this.descriptionTextBox);
             this.splitContainer1.Panel2.Controls.Add(photoLabel);
             this.splitContainer1.Panel2.Controls.Add(this.photoTextBox);
-            this.splitContainer1.Panel2.Controls.Add(this.saveButton);
+            this.splitContainer1.Panel2.Controls.Add(this.saveProductButton);
             this.splitContainer1.Size = new System.Drawing.Size(800, 485);
             this.splitContainer1.SplitterDistance = 97;
             // 
             // skuLabel
             // 
             skuLabel.AutoSize = true;
-            skuLabel.Location = new System.Drawing.Point(291, 18);
+            skuLabel.Location = new System.Drawing.Point(237, 22);
             skuLabel.Name = "skuLabel";
             skuLabel.Size = new System.Drawing.Size(48, 14);
             skuLabel.TabIndex = 22;
@@ -126,7 +129,7 @@
             // productNameLabel
             // 
             productNameLabel.AutoSize = true;
-            productNameLabel.Location = new System.Drawing.Point(291, 44);
+            productNameLabel.Location = new System.Drawing.Point(237, 48);
             productNameLabel.Name = "productNameLabel";
             productNameLabel.Size = new System.Drawing.Size(77, 14);
             productNameLabel.TabIndex = 24;
@@ -135,7 +138,7 @@
             // unitOfMeasurementLabel
             // 
             unitOfMeasurementLabel.AutoSize = true;
-            unitOfMeasurementLabel.Location = new System.Drawing.Point(291, 69);
+            unitOfMeasurementLabel.Location = new System.Drawing.Point(237, 73);
             unitOfMeasurementLabel.Name = "unitOfMeasurementLabel";
             unitOfMeasurementLabel.Size = new System.Drawing.Size(101, 14);
             unitOfMeasurementLabel.TabIndex = 26;
@@ -144,7 +147,7 @@
             // priceLabel
             // 
             priceLabel.AutoSize = true;
-            priceLabel.Location = new System.Drawing.Point(291, 96);
+            priceLabel.Location = new System.Drawing.Point(237, 100);
             priceLabel.Name = "priceLabel";
             priceLabel.Size = new System.Drawing.Size(31, 14);
             priceLabel.TabIndex = 28;
@@ -153,7 +156,7 @@
             // supplierIdLabel
             // 
             supplierIdLabel.AutoSize = true;
-            supplierIdLabel.Location = new System.Drawing.Point(291, 122);
+            supplierIdLabel.Location = new System.Drawing.Point(237, 126);
             supplierIdLabel.Name = "supplierIdLabel";
             supplierIdLabel.Size = new System.Drawing.Size(60, 14);
             supplierIdLabel.TabIndex = 30;
@@ -162,7 +165,7 @@
             // manufacturerIdLabel
             // 
             manufacturerIdLabel.AutoSize = true;
-            manufacturerIdLabel.Location = new System.Drawing.Point(291, 150);
+            manufacturerIdLabel.Location = new System.Drawing.Point(237, 154);
             manufacturerIdLabel.Name = "manufacturerIdLabel";
             manufacturerIdLabel.Size = new System.Drawing.Size(79, 14);
             manufacturerIdLabel.TabIndex = 32;
@@ -171,7 +174,7 @@
             // categoryLabel
             // 
             categoryLabel.AutoSize = true;
-            categoryLabel.Location = new System.Drawing.Point(291, 178);
+            categoryLabel.Location = new System.Drawing.Point(237, 182);
             categoryLabel.Name = "categoryLabel";
             categoryLabel.Size = new System.Drawing.Size(57, 14);
             categoryLabel.TabIndex = 34;
@@ -180,7 +183,7 @@
             // discountLabel
             // 
             discountLabel.AutoSize = true;
-            discountLabel.Location = new System.Drawing.Point(291, 206);
+            discountLabel.Location = new System.Drawing.Point(237, 210);
             discountLabel.Name = "discountLabel";
             discountLabel.Size = new System.Drawing.Size(40, 14);
             discountLabel.TabIndex = 36;
@@ -189,7 +192,7 @@
             // stockLabel
             // 
             stockLabel.AutoSize = true;
-            stockLabel.Location = new System.Drawing.Point(291, 231);
+            stockLabel.Location = new System.Drawing.Point(237, 235);
             stockLabel.Name = "stockLabel";
             stockLabel.Size = new System.Drawing.Size(86, 14);
             stockLabel.TabIndex = 38;
@@ -198,7 +201,7 @@
             // descriptionLabel
             // 
             descriptionLabel.AutoSize = true;
-            descriptionLabel.Location = new System.Drawing.Point(291, 260);
+            descriptionLabel.Location = new System.Drawing.Point(237, 264);
             descriptionLabel.Name = "descriptionLabel";
             descriptionLabel.Size = new System.Drawing.Size(89, 14);
             descriptionLabel.TabIndex = 40;
@@ -207,7 +210,7 @@
             // photoLabel
             // 
             photoLabel.AutoSize = true;
-            photoLabel.Location = new System.Drawing.Point(291, 286);
+            photoLabel.Location = new System.Drawing.Point(237, 290);
             photoLabel.Name = "photoLabel";
             photoLabel.Size = new System.Drawing.Size(32, 14);
             photoLabel.TabIndex = 42;
@@ -239,23 +242,23 @@
             this.tableAdapterManager.UpdateOrder = shoes.Shapkin_practice_shoesDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UserTableAdapter = null;
             // 
-            // saveButton
+            // saveProductButton
             // 
-            this.saveButton.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this.saveButton.Location = new System.Drawing.Point(288, 315);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(237, 23);
-            this.saveButton.TabIndex = 22;
-            this.saveButton.Text = "Сохранить";
-            this.saveButton.UseVisualStyleBackColor = false;
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            this.saveProductButton.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.saveProductButton.Location = new System.Drawing.Point(234, 319);
+            this.saveProductButton.Name = "saveProductButton";
+            this.saveProductButton.Size = new System.Drawing.Size(356, 23);
+            this.saveProductButton.TabIndex = 22;
+            this.saveProductButton.Text = "Сохранить";
+            this.saveProductButton.UseVisualStyleBackColor = false;
+            this.saveProductButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // skuTextBox
             // 
             this.skuTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "Sku", true));
-            this.skuTextBox.Location = new System.Drawing.Point(408, 15);
+            this.skuTextBox.Location = new System.Drawing.Point(354, 19);
             this.skuTextBox.Name = "skuTextBox";
-            this.skuTextBox.Size = new System.Drawing.Size(121, 20);
+            this.skuTextBox.Size = new System.Drawing.Size(236, 20);
             this.skuTextBox.TabIndex = 23;
             // 
             // productNameComboBox
@@ -271,9 +274,9 @@
             "Сапоги",
             "Тапочки",
             "Туфли"});
-            this.productNameComboBox.Location = new System.Drawing.Point(408, 41);
+            this.productNameComboBox.Location = new System.Drawing.Point(354, 45);
             this.productNameComboBox.Name = "productNameComboBox";
-            this.productNameComboBox.Size = new System.Drawing.Size(121, 22);
+            this.productNameComboBox.Size = new System.Drawing.Size(236, 22);
             this.productNameComboBox.TabIndex = 25;
             // 
             // unitOfMeasurementListBox
@@ -283,17 +286,17 @@
             this.unitOfMeasurementListBox.ItemHeight = 14;
             this.unitOfMeasurementListBox.Items.AddRange(new object[] {
             "шт."});
-            this.unitOfMeasurementListBox.Location = new System.Drawing.Point(408, 69);
+            this.unitOfMeasurementListBox.Location = new System.Drawing.Point(354, 73);
             this.unitOfMeasurementListBox.Name = "unitOfMeasurementListBox";
-            this.unitOfMeasurementListBox.Size = new System.Drawing.Size(121, 18);
+            this.unitOfMeasurementListBox.Size = new System.Drawing.Size(236, 18);
             this.unitOfMeasurementListBox.TabIndex = 27;
             // 
             // priceTextBox
             // 
             this.priceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "Price", true));
-            this.priceTextBox.Location = new System.Drawing.Point(408, 93);
+            this.priceTextBox.Location = new System.Drawing.Point(354, 97);
             this.priceTextBox.Name = "priceTextBox";
-            this.priceTextBox.Size = new System.Drawing.Size(121, 20);
+            this.priceTextBox.Size = new System.Drawing.Size(236, 20);
             this.priceTextBox.TabIndex = 29;
             // 
             // supplierIdComboBox
@@ -303,9 +306,9 @@
             this.supplierIdComboBox.DisplayMember = "SupplierName";
             this.supplierIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.supplierIdComboBox.FormattingEnabled = true;
-            this.supplierIdComboBox.Location = new System.Drawing.Point(408, 119);
+            this.supplierIdComboBox.Location = new System.Drawing.Point(354, 123);
             this.supplierIdComboBox.Name = "supplierIdComboBox";
-            this.supplierIdComboBox.Size = new System.Drawing.Size(121, 22);
+            this.supplierIdComboBox.Size = new System.Drawing.Size(236, 22);
             this.supplierIdComboBox.TabIndex = 31;
             this.supplierIdComboBox.ValueMember = "IdSupplier";
             // 
@@ -321,9 +324,9 @@
             this.manufacturerIdComboBox.DisplayMember = "ManufacturerName";
             this.manufacturerIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.manufacturerIdComboBox.FormattingEnabled = true;
-            this.manufacturerIdComboBox.Location = new System.Drawing.Point(408, 147);
+            this.manufacturerIdComboBox.Location = new System.Drawing.Point(354, 151);
             this.manufacturerIdComboBox.Name = "manufacturerIdComboBox";
-            this.manufacturerIdComboBox.Size = new System.Drawing.Size(121, 22);
+            this.manufacturerIdComboBox.Size = new System.Drawing.Size(236, 22);
             this.manufacturerIdComboBox.TabIndex = 33;
             this.manufacturerIdComboBox.ValueMember = "Idmanufacturer";
             // 
@@ -340,41 +343,42 @@
             this.categoryComboBox.Items.AddRange(new object[] {
             "Женская обувь",
             "Мужская обувь"});
-            this.categoryComboBox.Location = new System.Drawing.Point(408, 175);
+            this.categoryComboBox.Location = new System.Drawing.Point(354, 179);
             this.categoryComboBox.Name = "categoryComboBox";
-            this.categoryComboBox.Size = new System.Drawing.Size(121, 22);
+            this.categoryComboBox.Size = new System.Drawing.Size(236, 22);
             this.categoryComboBox.TabIndex = 35;
             // 
             // discountNumericUpDown
             // 
             this.discountNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.productBindingSource, "Discount", true));
-            this.discountNumericUpDown.Location = new System.Drawing.Point(408, 203);
+            this.discountNumericUpDown.Location = new System.Drawing.Point(354, 207);
             this.discountNumericUpDown.Name = "discountNumericUpDown";
-            this.discountNumericUpDown.Size = new System.Drawing.Size(121, 20);
+            this.discountNumericUpDown.Size = new System.Drawing.Size(236, 20);
             this.discountNumericUpDown.TabIndex = 37;
             // 
             // stockNumericUpDown
             // 
             this.stockNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.productBindingSource, "Stock", true));
-            this.stockNumericUpDown.Location = new System.Drawing.Point(408, 231);
+            this.stockNumericUpDown.Location = new System.Drawing.Point(354, 235);
             this.stockNumericUpDown.Name = "stockNumericUpDown";
-            this.stockNumericUpDown.Size = new System.Drawing.Size(121, 20);
+            this.stockNumericUpDown.Size = new System.Drawing.Size(236, 20);
             this.stockNumericUpDown.TabIndex = 39;
             // 
             // descriptionTextBox
             // 
             this.descriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "Description", true));
-            this.descriptionTextBox.Location = new System.Drawing.Point(408, 257);
+            this.descriptionTextBox.Location = new System.Drawing.Point(354, 261);
             this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(121, 20);
+            this.descriptionTextBox.Size = new System.Drawing.Size(236, 20);
             this.descriptionTextBox.TabIndex = 41;
             // 
             // photoTextBox
             // 
             this.photoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "Photo", true));
-            this.photoTextBox.Location = new System.Drawing.Point(408, 283);
+            this.photoTextBox.Enabled = false;
+            this.photoTextBox.Location = new System.Drawing.Point(354, 287);
             this.photoTextBox.Name = "photoTextBox";
-            this.photoTextBox.Size = new System.Drawing.Size(121, 20);
+            this.photoTextBox.Size = new System.Drawing.Size(156, 20);
             this.photoTextBox.TabIndex = 43;
             // 
             // supplierTableAdapter
@@ -384,6 +388,20 @@
             // manufacturerTableAdapter
             // 
             this.manufacturerTableAdapter.ClearBeforeFill = true;
+            // 
+            // openFileDialogButton
+            // 
+            this.openFileDialogButton.Location = new System.Drawing.Point(516, 286);
+            this.openFileDialogButton.Name = "openFileDialogButton";
+            this.openFileDialogButton.Size = new System.Drawing.Size(75, 23);
+            this.openFileDialogButton.TabIndex = 44;
+            this.openFileDialogButton.Text = "Файл";
+            this.openFileDialogButton.UseVisualStyleBackColor = true;
+            this.openFileDialogButton.Click += new System.EventHandler(this.openFileDialogButton_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // CreateUpdateProductForm
             // 
@@ -414,7 +432,7 @@
         private System.Windows.Forms.BindingSource productBindingSource;
         private Shapkin_practice_shoesDataSetTableAdapters.ProductTableAdapter productTableAdapter;
         private Shapkin_practice_shoesDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Button saveProductButton;
         private System.Windows.Forms.TextBox skuTextBox;
         private System.Windows.Forms.ComboBox productNameComboBox;
         private System.Windows.Forms.ListBox unitOfMeasurementListBox;
@@ -430,5 +448,7 @@
         private Shapkin_practice_shoesDataSetTableAdapters.SupplierTableAdapter supplierTableAdapter;
         private System.Windows.Forms.BindingSource manufacturerBindingSource;
         private Shapkin_practice_shoesDataSetTableAdapters.ManufacturerTableAdapter manufacturerTableAdapter;
+        private System.Windows.Forms.Button openFileDialogButton;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

@@ -1,7 +1,10 @@
 ﻿using shoes.AppModels;
 using shoes.AppServices;
 using System;
+using System.Collections.Generic;
+using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Windows.Forms;
 
 namespace shoes.AppForms
@@ -69,6 +72,8 @@ namespace shoes.AppForms
         {
             try
             {
+                string newFileName = SaveImage();
+                photoTextBox.Text = newFileName;
                 product = new Product();
                 FillModelFields();
                 Program.context.Product.Add(product);
@@ -79,6 +84,72 @@ namespace shoes.AppForms
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private string SaveImage()
+        {
+            // PKGH Файл не выбирали, но нажали кнопку "Сохранить".
+            if (string.IsNullOrEmpty(openFileDialog1.FileName) || openFileDialog1.FileName == "openFileDialog1")
+            {
+                return "";
+            }
+            Image originalImage = Image.FromFile(openFileDialog1.FileName);
+            Dictionary<string, int> newImageSize = GetNewImageSize(originalImage);
+
+            // PKGH Создаем изображение не более максимальных размеров.
+            Bitmap resizedImage = new Bitmap(originalImage, newImageSize["width"], newImageSize["height"]);
+
+            string fileName = Guid.NewGuid().ToString().Substring(0, 8) + ".jpg"; // PKGH Генерация уникального имени файла. Длина - 8 символов.
+
+            string savePath = FileManager.GetImgPath(fileName);
+
+            // PKGH Сохраняем изображение
+            resizedImage.Save(savePath);
+
+            // PKGH Освобождаем ресурсы
+            originalImage.Dispose();
+            resizedImage.Dispose();
+
+            return fileName;
+        }
+
+        /// <summary>
+        /// PKGH
+        /// Файл будет сохраняться с размером не более 300 х 200.
+        /// Получить размеры нового файла.
+        /// </summary>
+        /// <param name="originalImage"></param>
+        /// <returns></returns>
+
+        private Dictionary<string, int> GetNewImageSize(Image originalImage)
+        {
+            int maxWidth = 300;
+            int maxHeight = 200;
+
+            float ratioX = (float)maxWidth / originalImage.Width;
+            float ratioY = (float)maxHeight / originalImage.Height;
+            float ratio = Math.Min(ratioX, ratioY);
+
+            int newWidth = (int)(originalImage.Width * ratio);
+            int newHeight = (int)(originalImage.Height * ratio);
+
+            Dictionary<string, int> result = new Dictionary<string, int>();
+            result.Add("width", newWidth);
+            result.Add("height", newHeight);
+
+            return result;
+        }
+
+        private void openFileDialogButton_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Изображения (*.jpg;*.jpeg)|*.jpg;*.jpeg";
+
+            DialogResult dialogResult = openFileDialog1.ShowDialog();
+
+            if (dialogResult == DialogResult.OK)
+            {
+                photoTextBox.Text = Path.GetFileName(openFileDialog1.FileName);
             }
         }
     }

@@ -1,7 +1,6 @@
 X:\УП - Коробейникова\shoes_var1\shoes_var1\obj\Debug\shoes.csproj.AssemblyReference.cache
 X:\УП - Коробейникова\shoes_var1\shoes_var1\obj\Debug\shoes.csproj.SuggestedBindingRedirects.cache
 D:\shoes\shoes_var1\obj\Debug\shoes.csproj.AssemblyReference.cache
-D:\shoes\shoes_var1\obj\Debug\shoes.csproj.SuggestedBindingRedirects.cache
 D:\shoes\shoes_var1\obj\Debug\shoes.AppForms.ParentForm.resources
 D:\shoes\shoes_var1\obj\Debug\shoes.Properties.Resources.resources
 D:\shoes\shoes_var1\obj\Debug\shoes.csproj.GenerateResource.cache
@@ -36,10 +35,10 @@ D:\shoes\shoes_var1\bin\Debug\ru\MSTest.TestFramework.resources.dll
 D:\shoes\shoes_var1\bin\Debug\tr\MSTest.TestFramework.resources.dll
 D:\shoes\shoes_var1\bin\Debug\zh-Hans\MSTest.TestFramework.resources.dll
 D:\shoes\shoes_var1\bin\Debug\zh-Hant\MSTest.TestFramework.resources.dll
-D:\shoes\shoes_var1\obj\Debug\shoes.csproj.CopyComplete
 D:\shoes\shoes_var1\obj\Debug\shoes.exe
 D:\shoes\shoes_var1\obj\Debug\shoes.pdb
 D:\shoes\shoes_var1\obj\Debug\shoes.AppControls.ProductUserControl.resources
 D:\shoes\shoes_var1\obj\Debug\shoes.AppForms.LoginForm.resources
 D:\shoes\shoes_var1\obj\Debug\shoes.AppForms.ProductForm.resources
 D:\shoes\shoes_var1\obj\Debug\shoes.AppForms.CreateUpdateProductForm.resources
+D:\shoes\shoes_var1\obj\Debug\shoes.csproj.Up2Date
