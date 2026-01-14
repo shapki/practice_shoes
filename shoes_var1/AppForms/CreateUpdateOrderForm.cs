@@ -17,6 +17,22 @@ namespace shoes.AppForms
             _order = new Order();
         }
 
+        public CreateUpdateOrderForm(Order order)
+        {
+            InitializeComponent();
+            _order = order;
+            FillForm();
+        }
+
+        private void FillForm()
+        {
+            idOrderLabel1.Text = _order.IdOrder.ToString();
+            dateDateTimePicker.Value = _order.Date;
+            deliveryDateDateTimePicker.Value = _order.DeliveryDate;
+            clientIdComboBox.SelectedValue = _order.ClientId;
+            statusComboBox.Text = _order.Status;
+        }
+
         private void CreateUpdateOrderForm_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "shapkin_practice_shoesDataSet.User". При необходимости она может быть перемещена или удалена.

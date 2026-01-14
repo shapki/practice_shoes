@@ -50,6 +50,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(84, 84);
             this.panel1.TabIndex = 0;
+            this.panel1.Click += new System.EventHandler(this.order_Click);
             // 
             // panel2
             // 
@@ -62,6 +63,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(601, 84);
             this.panel2.TabIndex = 1;
+            this.panel2.Click += new System.EventHandler(this.order_Click);
             // 
             // orderIdlabel
             // 
@@ -71,6 +73,7 @@
             this.orderIdlabel.Size = new System.Drawing.Size(16, 13);
             this.orderIdlabel.TabIndex = 0;
             this.orderIdlabel.Text = "Id";
+            this.orderIdlabel.Click += new System.EventHandler(this.order_Click);
             // 
             // statusLabel
             // 
@@ -80,6 +83,7 @@
             this.statusLabel.Size = new System.Drawing.Size(41, 13);
             this.statusLabel.TabIndex = 1;
             this.statusLabel.Text = "Статус";
+            this.statusLabel.Click += new System.EventHandler(this.order_Click);
             // 
             // officeLabel
             // 
@@ -89,6 +93,7 @@
             this.officeLabel.Size = new System.Drawing.Size(115, 13);
             this.officeLabel.TabIndex = 2;
             this.officeLabel.Text = "Адрес пункта выдачи";
+            this.officeLabel.Click += new System.EventHandler(this.order_Click);
             // 
             // orderDateLabel
             // 
@@ -98,6 +103,7 @@
             this.orderDateLabel.Size = new System.Drawing.Size(72, 13);
             this.orderDateLabel.TabIndex = 3;
             this.orderDateLabel.Text = "Дата заказа";
+            this.orderDateLabel.Click += new System.EventHandler(this.order_Click);
             // 
             // label1
             // 
@@ -107,6 +113,7 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Дата заказа";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.Click += new System.EventHandler(this.order_Click);
             // 
             // deliveryDateLabel
             // 
@@ -116,6 +123,7 @@
             this.deliveryDateLabel.TabIndex = 1;
             this.deliveryDateLabel.Text = "Дата";
             this.deliveryDateLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.deliveryDateLabel.Click += new System.EventHandler(this.order_Click);
             // 
             // deleteButton
             // 
